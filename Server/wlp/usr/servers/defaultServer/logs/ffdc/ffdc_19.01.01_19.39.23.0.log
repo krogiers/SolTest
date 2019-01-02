@@ -1,0 +1,2873 @@
+------Start of DE processing------ = [1/01/19 19:39:23:546 CET]
+Exception = javax.json.bind.JsonbException
+Source = org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor
+probeid = 273
+Stack Dump = javax.json.bind.JsonbException: Error getting value on: colruyt.registration.Article@5bc567cd
+	at org.eclipse.yasson.internal.model.GetValueCommand.getValue(GetValueCommand.java:36)
+	at org.eclipse.yasson.internal.model.ReflectionPropagation.getValue(ReflectionPropagation.java:72)
+	at org.eclipse.yasson.internal.model.PropertyModel.getValue(PropertyModel.java:280)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.marshallProperty(ObjectSerializer.java:80)
+	at org.eclipse.yasson.internal.serializer.ObjectSerializer.serializeInternal(ObjectSerializer.java:61)
+	at org.eclipse.yasson.internal.serializer.AbstractContainerSerializer.serialize(AbstractContainerSerializer.java:63)
+	at org.eclipse.yasson.internal.serializer.AbstractContainerSerializer.serializerCaptor(AbstractContainerSerializer.java:95)
+	at org.eclipse.yasson.internal.serializer.AbstractContainerSerializer.serializeItem(AbstractContainerSerializer.java:141)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serializeInternal(CollectionSerializer.java:39)
+	at org.eclipse.yasson.internal.serializer.CollectionSerializer.serializeInternal(CollectionSerializer.java:27)
+	at org.eclipse.yasson.internal.serializer.AbstractContainerSerializer.serialize(AbstractContainerSerializer.java:63)
+	at org.eclipse.yasson.internal.Marshaller.serializeRoot(Marshaller.java:118)
+	at org.eclipse.yasson.internal.Marshaller.marshall(Marshaller.java:74)
+	at org.eclipse.yasson.internal.JsonBinding.toJson(JsonBinding.java:133)
+	at com.ibm.ws.jaxrs21.providers.json.JsonBProvider.writeTo(JsonBProvider.java:159)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils$3.run(JAXRSUtils.java:1424)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils$3.run(JAXRSUtils.java:1421)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at org.apache.cxf.jaxrs.utils.JAXRSUtils.writeMessageBody(JAXRSUtils.java:1421)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.serializeMessage(JAXRSOutInterceptor.java:249)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.processResponse(JAXRSOutInterceptor.java:124)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.handleMessage(JAXRSOutInterceptor.java:85)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.interceptor.OutgoingChainInterceptor.handleMessage(OutgoingChainInterceptor.java:90)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:146)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doGet(IBMRestServlet.java:112)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:96)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:743)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:440)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:182)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:56)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:996)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1134)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1005)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:75)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:83)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:927)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1023)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:417)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:376)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:466)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:331)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:501)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:571)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:926)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1015)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.reflect.InvocationTargetException
+	at jdk.internal.reflect.GeneratedMethodAccessor1314.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.yasson.internal.model.GetFromGetter.internalGetValue(GetFromGetter.java:28)
+	at org.eclipse.yasson.internal.model.GetValueCommand.getValue(GetValueCommand.java:34)
+	... 61 more
+Caused by: java.lang.NullPointerException
+	at colruyt.registration.Article.getTotal(Article.java:45)
+	... 65 more
+
+Dump of callerThis
+Object type = org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor
+  tc = class com.ibm.websphere.ras.TraceComponent@2dc33030
+    strings[0] = "TraceComponent[org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor,class org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor,[],null,null]"
+  BUNDLE = class java.util.PropertyResourceBundle@583f99e0
+    encoding = ""
+    lookup = class java.util.HashMap@5864ff08
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[4]
+      entrySet = null
+      size = 2
+      modCount = 2
+      threshold = 3
+      loadFactor = 0.75
+      keySet = null
+      values = null
+    INITIAL_CACHE_SIZE = 32
+    NONEXISTENT_BUNDLE = class java.util.ResourceBundle$2@afa1ee3
+      INITIAL_CACHE_SIZE = 32
+      NONEXISTENT_BUNDLE = class java.util.ResourceBundle$2@afa1ee3
+      cacheList = class java.util.concurrent.ConcurrentHashMap@4f29e88c
+      referenceQueue = class java.lang.ref.ReferenceQueue@7ad84b52
+      parent = null
+      locale = null
+      name = null
+      expired = false
+      cacheKey = class java.util.ResourceBundle$CacheKey@7dc558a1
+      keySet = null
+      UNKNOWN_FORMAT = ""
+      TRACE_ON = false
+      $assertionsDisabled = true
+    cacheList = class java.util.concurrent.ConcurrentHashMap@4f29e88c
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = class java.util.concurrent.ConcurrentHashMap$Node[1024]
+      nextTable = null
+      baseCount = 405
+      sizeCtl = 768
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    referenceQueue = class java.lang.ref.ReferenceQueue@7ad84b52
+      NULL = class java.lang.ref.ReferenceQueue$Null@260ae6b4
+      ENQUEUED = class java.lang.ref.ReferenceQueue$Null@4eab434b
+      lock = class java.lang.ref.ReferenceQueue$Lock@317248aa
+      head = null
+      queueLength = 0
+      $assertionsDisabled = true
+    parent = null
+    locale = class java.util.Locale@7cff3dcb
+      LOCALECACHE = class java.util.Locale$Cache@45d39d5c
+      ENGLISH = class java.util.Locale@16c782d9
+      FRENCH = class java.util.Locale@4722836b
+      GERMAN = class java.util.Locale@3cea9ae4
+      ITALIAN = class java.util.Locale@650ac958
+      JAPANESE = class java.util.Locale@4ff15e6a
+      KOREAN = class java.util.Locale@1c9bb524
+      CHINESE = class java.util.Locale@744e31e9
+      SIMPLIFIED_CHINESE = class java.util.Locale@473d6631
+      TRADITIONAL_CHINESE = class java.util.Locale@2fa72b2
+      FRANCE = class java.util.Locale@4309d55c
+      GERMANY = class java.util.Locale@464d75ad
+      ITALY = class java.util.Locale@6a6d9fbb
+      JAPAN = class java.util.Locale@3bd31fa6
+      KOREA = class java.util.Locale@36fd9eb5
+      CHINA = class java.util.Locale@473d6631
+      PRC = class java.util.Locale@473d6631
+      TAIWAN = class java.util.Locale@2fa72b2
+      UK = class java.util.Locale@1b3065da
+      US = class java.util.Locale@1da6b140
+      CANADA = class java.util.Locale@3eabb37d
+      CANADA_FRENCH = class java.util.Locale@64798a2b
+      ROOT = class java.util.Locale@7cff3dcb
+      PRIVATE_USE_EXTENSION = x
+      UNICODE_LOCALE_EXTENSION = u
+      serialVersionUID = 9149081749638150636
+      DISPLAY_LANGUAGE = 0
+      DISPLAY_COUNTRY = 1
+      DISPLAY_VARIANT = 2
+      DISPLAY_SCRIPT = 3
+      DISPLAY_UEXT_KEY = 4
+      DISPLAY_UEXT_TYPE = 5
+      baseLocale = class sun.util.locale.BaseLocale@1b20007c
+      localeExtensions = null
+      hashCodeValue = 0
+      defaultLocale = class java.util.Locale@4c474e24
+      defaultDisplayLocale = null
+      defaultFormatLocale = class java.util.Locale@4c474e24
+      languageTag = "und"
+      serialPersistentFields = class java.io.ObjectStreamField[6]
+      isoLanguages = null
+      isoCountries = null
+      $assertionsDisabled = true
+    name = "org.apache.cxf.jaxrs.interceptor.Messages"
+    expired = false
+    cacheKey = class java.util.ResourceBundle$CacheKey@67c5e014
+      name = "org.apache.cxf.jaxrs.interceptor.Messages"
+      locale = class java.util.Locale@7cff3dcb
+      moduleRef = class java.util.ResourceBundle$KeyElementReference@537d4f4c
+      callerRef = class java.util.ResourceBundle$KeyElementReference@606bc8bb
+      modulesHash = 1611723826
+      format = "java.properties"
+      loadTime = 0
+      expirationTime = -2
+      cause = null
+      providers = null
+      providersChecked = false
+      callerHasProvider = null
+    keySet = null
+    UNKNOWN_FORMAT = ""
+    TRACE_ON = false
+    $assertionsDisabled = true
+  serialVersionUID = -4350422302552971165
+  DISABLE_OUTPUTSTREAM_OPTIMIZATION = "disable.outputstream.optimization"
+  OUT_BUFFERING = "org.apache.cxf.output.buffering"
+  id = "org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor"
+  phase = "marshal"
+  before = class org.apache.cxf.common.util.SortedArraySet@40f1476b
+    data = class java.util.concurrent.atomic.AtomicReference@12642830
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@55fdccf8
+      value = null
+  after = class org.apache.cxf.common.util.SortedArraySet@4d4e4a0a
+    data = class java.util.concurrent.atomic.AtomicReference@3630578f
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@55fdccf8
+      value = null
+
+Dump of objectArray[0]
+Object type = org.apache.cxf.jaxrs.provider.ServerProviderFactory
+  tc = class com.ibm.websphere.ras.TraceComponent@38b84655
+    strings[0] = "TraceComponent[org.apache.cxf.jaxrs.provider.ServerProviderFactory,class org.apache.cxf.jaxrs.provider.ServerProviderFactory,[],null,null]"
+  WADL_PROVIDER_NAME = "org.apache.cxf.jaxrs.model.wadl.WadlGenerator"
+  MAKE_DEFAULT_WAE_LEAST_SPECIFIC = "default.wae.mapper.least.specific"
+  exceptionMappers = class java.util.ArrayList@49f53b61
+    serialVersionUID = 8683452581122892189
+    DEFAULT_CAPACITY = 10
+    EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    elementData = class java.lang.Object[2]
+      Object[0] = class org.apache.cxf.jaxrs.model.ProviderInfo@485b4b41
+      Object[1] = class org.apache.cxf.jaxrs.model.ProviderInfo@5fb9742e
+    size = 2
+    MAX_ARRAY_SIZE = 2147483639
+    modCount = 2
+    MAX_ARRAY_SIZE = 2147483639
+  preMatchContainerRequestFilters = class java.util.ArrayList@3ab300fd
+    serialVersionUID = 8683452581122892189
+    DEFAULT_CAPACITY = 10
+    EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    elementData = class java.lang.Object[1]
+      Object[0] = null
+    size = 0
+    MAX_ARRAY_SIZE = 2147483639
+    modCount = 4
+    MAX_ARRAY_SIZE = 2147483639
+  postMatchContainerRequestFilters = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@52b02626
+    serialVersionUID = -4352258671270502204
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1e0410b3
+    comparator = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyComparator@feb5a0
+      serialVersionUID = -156933271485292699
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@12c868ea
+      ascending = true
+      serialVersionUID = 2930255358206049304
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@3d8f2fa
+    root = class java.util.TreeMap$Entry@2f338a1f
+      key = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKey@55ae77e5
+      value = class org.apache.cxf.jaxrs.model.ProviderInfo@2c4f56cc
+      left = null
+      right = null
+      parent = null
+      color = true
+    size = 1
+    modCount = 1
+    entrySet = class java.util.TreeMap$EntrySet@f1b9ccc
+      this$0 = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@52b02626
+      MAX_ARRAY_SIZE = 2147483639
+    navigableKeySet = null
+    descendingMap = null
+    UNBOUNDED = class java.lang.Object@40c984c7
+    RED = false
+    BLACK = true
+    serialVersionUID = 919286545866124006
+    keySet = null
+    values = class java.util.TreeMap$Values@65021e7d
+      this$0 = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@52b02626
+      MAX_ARRAY_SIZE = 2147483639
+  containerResponseFilters = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@6b3a0a35
+    serialVersionUID = -4352258671270502204
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1e0410b3
+      strings[0] = "TraceComponent[org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap,class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap,[],null,null]"
+    comparator = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyComparator@19681723
+      serialVersionUID = -156933271485292699
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@12c868ea
+      ascending = false
+      serialVersionUID = 2930255358206049304
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@3d8f2fa
+    root = null
+    size = 0
+    modCount = 0
+    entrySet = null
+    navigableKeySet = null
+    descendingMap = null
+    UNBOUNDED = class java.lang.Object@40c984c7
+    RED = false
+    BLACK = true
+    serialVersionUID = 919286545866124006
+    keySet = null
+    values = class java.util.TreeMap$Values@42cdb5fd
+      this$0 = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@6b3a0a35
+      MAX_ARRAY_SIZE = 2147483639
+  requestPreprocessor = class org.apache.cxf.jaxrs.impl.RequestPreprocessor@bf40a00
+    ACCEPT_QUERY = "_type"
+    CTYPE_QUERY = "_ctype"
+    METHOD_QUERY = "_method"
+    METHOD_HEADER = "X-HTTP-Method-Override"
+    PATHS_TO_SKIP = class java.util.HashSet@853844b
+      serialVersionUID = -5024744406713321676
+      map = class java.util.HashMap@7ed3c044
+      PRESENT = class java.lang.Object@629aa37a
+      MAX_ARRAY_SIZE = 2147483639
+    MEDIA_TYPE_SHORTCUTS = class java.util.HashMap@4e06bdca
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[16]
+      entrySet = null
+      size = 6
+      modCount = 6
+      threshold = 12
+      loadFactor = 0.75
+      keySet = null
+      values = null
+    languageMappings = class java.util.Collections$EmptyMap@5b77cf6
+    extensionMappings = class java.util.Collections$EmptyMap@5b77cf6
+  application = class org.apache.cxf.jaxrs.model.ApplicationInfo@29e2576b
+    overridingProps = class java.util.Collections$EmptyMap@5b77cf6
+      serialVersionUID = 6428348081105594320
+      keySet = null
+      values = null
+    tc = class com.ibm.ejs.ras.TraceComponent@6762f18
+      strings[0] = "TraceComponent[org.apache.cxf.jaxrs.model.ProviderInfo,class org.apache.cxf.jaxrs.model.ProviderInfo,[],null,null]"
+    provider = class colruyt.registration.RegistrationApp@4683afbc
+    oldProvider = null
+    isInit = false
+    custom = true
+    busGlobal = false
+    serialVersionUID = -6371666087391739147
+    tc = class com.ibm.websphere.ras.TraceComponent@23c55a8
+      strings[0] = "TraceComponent[org.apache.cxf.jaxrs.model.AbstractResourceInfo,class org.apache.cxf.jaxrs.model.AbstractResourceInfo,[],null,null]"
+    PROXY_SET = "proxy-set"
+    CONSTRUCTOR_PROXY_MAP = "jaxrs-constructor-proxy-map"
+    FIELD_PROXY_MAP = "jaxrs-field-proxy-map"
+    SETTER_PROXY_MAP = "jaxrs-setter-proxy-map"
+    STANDARD_CONTEXT_CLASSES = class java.util.HashSet@b0ccfbd
+      serialVersionUID = -5024744406713321676
+      map = class java.util.HashMap@7093729c
+      PRESENT = class java.lang.Object@629aa37a
+      MAX_ARRAY_SIZE = 2147483639
+    root = true
+    resourceClass = class java.lang.Class@1ed1783c
+      ANNOTATION = 8192
+      ENUM = 16384
+      SYNTHETIC = 4096
+      cachedConstructor = null
+      newInstanceCallerCache = null
+      name = "colruyt.registration.RegistrationApp"
+      module = class java.lang.Module@7e884750
+      packageName = "colruyt.registration"
+      componentType = null
+      allPermDomain = class java.security.ProtectionDomain@74106232
+      reflectionData = class java.lang.ref.SoftReference@35f0c37a
+      classRedefinedCount = 0
+      genericInfo = null
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      serialVersionUID = 3206093459760846163
+      serialPersistentFields = class java.io.ObjectStreamField[0]
+      reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      enumConstants = null
+      enumConstantDirectory = null
+      annotationData = class java.lang.Class$AnnotationData@3773dc53
+      annotationType = null
+      classValueMap = null
+    serviceClass = class java.lang.Class@1ed1783c
+    contextFields = null
+    contextMethods = null
+    bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+    constructorProxiesAvailable = false
+    contextsAvailable = false
+    serialVersionUID = 6898748758160355649
+  dynamicFeatures = class java.util.LinkedHashSet@7ab0d567
+    serialVersionUID = -2851667679971038690
+    serialVersionUID = -5024744406713321676
+    map = class java.util.LinkedHashMap@10a4e4c8
+      serialVersionUID = 3801124242820219131
+      head = null
+      tail = null
+      accessOrder = false
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = null
+      entrySet = null
+      size = 0
+      modCount = 0
+      threshold = 16
+      loadFactor = 0.75
+      keySet = null
+      values = null
+    PRESENT = class java.lang.Object@629aa37a
+    MAX_ARRAY_SIZE = 2147483639
+  beanParams = class java.util.concurrent.ConcurrentHashMap@41e013a6
+    serialVersionUID = 7249069246763182397
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_CAPACITY = 16
+    MAX_ARRAY_SIZE = 2147483639
+    DEFAULT_CONCURRENCY_LEVEL = 16
+    LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    MIN_TRANSFER_STRIDE = 16
+    RESIZE_STAMP_BITS = 16
+    MAX_RESIZERS = 65535
+    RESIZE_STAMP_SHIFT = 16
+    MOVED = -1
+    TREEBIN = -2
+    RESERVED = -3
+    HASH_BITS = 2147483647
+    NCPU = 12
+    serialPersistentFields = class java.io.ObjectStreamField[3]
+    table = null
+    nextTable = null
+    baseCount = 0
+    sizeCtl = 0
+    transferIndex = 0
+    cellsBusy = 0
+    counterCells = null
+    keySet = null
+    values = null
+    entrySet = null
+    U = class jdk.internal.misc.Unsafe@69cff604
+    SIZECTL = 20
+    TRANSFERINDEX = 32
+    BASECOUNT = 24
+    CELLSBUSY = 36
+    CELLVALUE = 144
+    ABASE = 16
+    ASHIFT = 2
+    keySet = null
+    values = null
+  wadlGenerator = class org.apache.cxf.jaxrs.model.ProviderInfo@6aefb590
+    tc = class com.ibm.ejs.ras.TraceComponent@6762f18
+    provider = class org.apache.cxf.jaxrs.model.wadl.WadlGenerator@23904d53
+      WADL_QUERY = "_wadl"
+      WADL_TYPE = class javax.ws.rs.core.MediaType@16cec1d6
+      WADL_NS = "http://wadl.dev.java.net/2009/02"
+      DEFAULT_WADL_SCHEMA_LOC = "http://www.w3.org/Submission/wadl/wadl.xsd"
+      LOG = class com.ibm.ws.logging.internal.WsLogger@185bad60
+      CONVERT_WADL_RESOURCES_TO_DOM = "convert.wadl.resources.to.dom"
+      XLS_NS = "http://www.w3.org/1999/XSL/Transform"
+      JAXB_DEFAULT_NAMESPACE = "##default"
+      JAXB_DEFAULT_NAME = "##default"
+      CLASSPATH_PREFIX = "classpath:"
+      DEFAULT_NS_PREFIX = "prefix"
+      PARAMETER_TYPE_MAP = class java.util.HashMap@5f9e05b5
+      wadlNamespace = null
+      singleResourceMultipleMethods = true
+      useSingleSlashResource = false
+      ignoreForwardSlash = false
+      linkAnyMediaTypeToXmlSchema = false
+      useJaxbContextForQnames = true
+      supportCollections = true
+      supportJaxbXmlType = true
+      supportJaxbSubstitutions = true
+      ignoreOverloadedMethods = false
+      checkAbsolutePathSlash = false
+      keepRelativeDocLinks = false
+      usePathParamsToCompareOperations = true
+      incrementNamespacePrefix = true
+      ignoreMessageWriters = true
+      ignoreRequests = false
+      convertResourcesToDOM = true
+      wadlSchemaLocation = null
+      externalSchemasCache = null
+      externalSchemaLinks = null
+      externalQnamesMap = null
+      docLocationMap = class java.util.concurrent.ConcurrentHashMap@30884c11
+      resolver = null
+      privateAddresses = null
+      whiteList = null
+      applicationTitle = null
+      nsPrefix = "prefix"
+      defaultWadlResponseMediaType = class javax.ws.rs.core.MediaType@5028fba7
+      defaultRepMediaType = class javax.ws.rs.core.MediaType@15dd6c6f
+      stylesheetReference = null
+      applyStylesheetLocally = false
+      bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+      docProviders = class java.util.LinkedList@3ac160cc
+      idGenerator = null
+      jaxbContextProperties = null
+    oldProvider = null
+    isInit = true
+    custom = true
+    busGlobal = false
+    serialVersionUID = -6371666087391739147
+    tc = class com.ibm.websphere.ras.TraceComponent@23c55a8
+    PROXY_SET = "proxy-set"
+    CONSTRUCTOR_PROXY_MAP = "jaxrs-constructor-proxy-map"
+    FIELD_PROXY_MAP = "jaxrs-field-proxy-map"
+    SETTER_PROXY_MAP = "jaxrs-setter-proxy-map"
+    STANDARD_CONTEXT_CLASSES = class java.util.HashSet@b0ccfbd
+    root = true
+    resourceClass = class java.lang.Class@1dad4818
+      ANNOTATION = 8192
+      ENUM = 16384
+      SYNTHETIC = 4096
+      cachedConstructor = null
+      newInstanceCallerCache = null
+      name = "org.apache.cxf.jaxrs.model.wadl.WadlGenerator"
+      module = class java.lang.Module@72ba0147
+      packageName = "org.apache.cxf.jaxrs.model.wadl"
+      componentType = null
+      allPermDomain = class java.security.ProtectionDomain@74106232
+      reflectionData = class java.lang.ref.SoftReference@37b7259a
+      classRedefinedCount = 0
+      genericInfo = null
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      serialVersionUID = 3206093459760846163
+      serialPersistentFields = class java.io.ObjectStreamField[0]
+      reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      enumConstants = null
+      enumConstantDirectory = null
+      annotationData = class java.lang.Class$AnnotationData@3720a08
+      annotationType = null
+      classValueMap = null
+    serviceClass = class java.lang.Class@1dad4818
+    contextFields = null
+    contextMethods = null
+    bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+    constructorProxiesAvailable = false
+    contextsAvailable = false
+    serialVersionUID = 6898748758160355649
+  serialVersionUID = -756382907551556792
+  tc = class com.ibm.websphere.ras.TraceComponent@59a7671b
+    strings[0] = "TraceComponent[org.apache.cxf.jaxrs.provider.ProviderFactory,class org.apache.cxf.jaxrs.provider.ProviderFactory,[],null,null]"
+  DEFAULT_FILTER_NAME_BINDING = "org.apache.cxf.filter.binding"
+  PROVIDER_SELECTION_PROPERTY_CHANGED = "provider.selection.property.changed"
+  ACTIVE_JAXRS_PROVIDER_KEY = "active.jaxrs.provider"
+  SERVER_FACTORY_NAME = "org.apache.cxf.jaxrs.provider.ServerProviderFactory"
+  CLIENT_FACTORY_NAME = "org.apache.cxf.jaxrs.client.ClientProviderFactory"
+  IGNORE_TYPE_VARIABLES = "org.apache.cxf.jaxrs.providers.ignore.typevars"
+  JAXB_PROVIDER_NAME = "org.apache.cxf.jaxrs.provider.JAXBElementProvider"
+  JSON_PROVIDER_NAME = "org.apache.cxf.jaxrs.provider.json.JSONProvider"
+  BUS_PROVIDERS_ALL = "org.apache.cxf.jaxrs.bus.providers"
+  PROVIDER_CACHE_ALLOWED = "org.apache.cxf.jaxrs.provider.cache.allowed"
+  PROVIDER_CACHE_CHECK_ALL = "org.apache.cxf.jaxrs.provider.cache.checkAllCandidates"
+  readerInterceptors = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@510dfea9
+    serialVersionUID = -4352258671270502204
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1e0410b3
+    comparator = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyComparator@506c6304
+      serialVersionUID = -156933271485292699
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@12c868ea
+      ascending = true
+      serialVersionUID = 2930255358206049304
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@3d8f2fa
+    root = null
+    size = 0
+    modCount = 0
+    entrySet = null
+    navigableKeySet = null
+    descendingMap = null
+    UNBOUNDED = class java.lang.Object@40c984c7
+    RED = false
+    BLACK = true
+    serialVersionUID = 919286545866124006
+    keySet = null
+    values = class java.util.TreeMap$Values@35910ae9
+      this$0 = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@510dfea9
+      MAX_ARRAY_SIZE = 2147483639
+  writerInterceptors = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@2dea0202
+    serialVersionUID = -4352258671270502204
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1e0410b3
+    comparator = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyComparator@90860d3
+      serialVersionUID = -156933271485292699
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@12c868ea
+      ascending = true
+      serialVersionUID = 2930255358206049304
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@3d8f2fa
+    root = null
+    size = 0
+    modCount = 0
+    entrySet = null
+    navigableKeySet = null
+    descendingMap = null
+    UNBOUNDED = class java.lang.Object@40c984c7
+    RED = false
+    BLACK = true
+    serialVersionUID = 919286545866124006
+    keySet = null
+    values = class java.util.TreeMap$Values@898ce6
+      this$0 = class org.apache.cxf.jaxrs.provider.ProviderFactory$NameKeyMap@2dea0202
+      MAX_ARRAY_SIZE = 2147483639
+  messageReaders = class org.apache.cxf.jaxrs.provider.ProviderFactory$AtomicReferenceProviderList@6cd6493a
+    referent = class java.util.concurrent.atomic.AtomicReference@44f1ce8f
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@55fdccf8
+      value = class java.util.ArrayList@7be01f74
+    this$0 = class org.apache.cxf.jaxrs.provider.ServerProviderFactory@75999550
+    serialVersionUID = -1278680460486519436
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1922be22
+  messageWriters = class org.apache.cxf.jaxrs.provider.ProviderFactory$AtomicReferenceProviderList@7b022205
+    referent = class java.util.concurrent.atomic.AtomicReference@4651727b
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@55fdccf8
+      value = class java.util.ArrayList@51ab5553
+    this$0 = class org.apache.cxf.jaxrs.provider.ServerProviderFactory@75999550
+    serialVersionUID = -1278680460486519436
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1922be22
+      strings[0] = "TraceComponent[org.apache.cxf.jaxrs.provider.ProviderFactory$AtomicReferenceProviderList,class org.apache.cxf.jaxrs.provider.ProviderFactory$AtomicReferenceProviderList,[],null,null]"
+  contextResolvers = class org.apache.cxf.jaxrs.provider.ProviderFactory$AtomicReferenceProviderList@45c4637a
+    referent = class java.util.concurrent.atomic.AtomicReference@695f7341
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@55fdccf8
+      value = class java.util.Collections$EmptyList@490b16ea
+    this$0 = class org.apache.cxf.jaxrs.provider.ServerProviderFactory@75999550
+    serialVersionUID = -1278680460486519436
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1922be22
+  contextProviders = class org.apache.cxf.jaxrs.provider.ProviderFactory$AtomicReferenceProviderList@38c383d2
+    referent = class java.util.concurrent.atomic.AtomicReference@2fd1fb3e
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@55fdccf8
+      value = class java.util.ArrayList@2b7b8197
+    this$0 = class org.apache.cxf.jaxrs.provider.ServerProviderFactory@75999550
+    serialVersionUID = -1278680460486519436
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1922be22
+  paramConverters = class org.apache.cxf.jaxrs.provider.ProviderFactory$AtomicReferenceProviderList@66029269
+    referent = class java.util.concurrent.atomic.AtomicReference@e353962
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@55fdccf8
+      value = class java.util.Collections$EmptyList@490b16ea
+    this$0 = class org.apache.cxf.jaxrs.provider.ServerProviderFactory@75999550
+    serialVersionUID = -1278680460486519436
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1922be22
+  paramConverterContextsAvailable = false
+  injectedProviders = class java.util.HashSet@c7a96a6
+    serialVersionUID = -5024744406713321676
+    map = class java.util.HashMap@23f4f7b1
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[16]
+      entrySet = null
+      size = 6
+      modCount = 6
+      threshold = 12
+      loadFactor = 0.75
+      keySet = null
+      values = null
+    PRESENT = class java.lang.Object@629aa37a
+    MAX_ARRAY_SIZE = 2147483639
+  bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+    busCounter = class java.util.concurrent.atomic.AtomicInteger@705af2ff
+      serialVersionUID = 6214790243416807050
+      U = class jdk.internal.misc.Unsafe@69cff604
+      VALUE = 12
+      value = 1
+      serialVersionUID = -8742448824652078965
+    serialVersionUID = 2386792285914827878
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@39cd1987
+      strings[0] = "TraceComponent[com.ibm.ws.jaxrs20.bus.LibertyApplicationBus,class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus,[JaxRsCommon],com.ibm.ws.jaxrs20.internal.resources.JaxRsCommonMessages,null]"
+    BUS_PROPERTY_NAME = "bus"
+    BUS_ID_PROPERTY_NAME = "org.apache.cxf.bus.id"
+    extensions = class java.util.concurrent.ConcurrentHashMap@55efb7f
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = class java.util.concurrent.ConcurrentHashMap$Node[32]
+      nextTable = null
+      baseCount = 19
+      sizeCtl = 24
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    missingExtensions = class java.util.concurrent.CopyOnWriteArraySet@32ebcdb8
+      serialVersionUID = 5457747651344034263
+      al = class java.util.concurrent.CopyOnWriteArrayList@6ed08298
+      MAX_ARRAY_SIZE = 2147483639
+    id = "SolTest-Server-Bus"
+    state = class org.apache.cxf.Bus$BusState@3626ed2b
+      INITIAL = class org.apache.cxf.Bus$BusState@26c6285a
+      INITIALIZING = class org.apache.cxf.Bus$BusState@65addd2b
+      RUNNING = class org.apache.cxf.Bus$BusState@3626ed2b
+      SHUTTING_DOWN = class org.apache.cxf.Bus$BusState@5e73dd8
+      SHUTDOWN = class org.apache.cxf.Bus$BusState@620f6faa
+      $VALUES = class org.apache.cxf.Bus$BusState[5]
+      name = "RUNNING"
+      ordinal = 2
+    features = class java.util.concurrent.CopyOnWriteArrayList@114c2c1a
+      serialVersionUID = 8673264195747942595
+      lock = class java.lang.Object@7dac8242
+      array = class java.lang.Object[0]
+    properties = class java.util.concurrent.ConcurrentHashMap@63bbb84f
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = class java.util.concurrent.ConcurrentHashMap$Node[32]
+      nextTable = null
+      baseCount = 12
+      sizeCtl = 24
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = class java.util.concurrent.ConcurrentHashMap$EntrySetView@24ad0bf8
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    extensionManager = class org.apache.cxf.bus.extension.ExtensionManagerImpl@fd12f8d
+      EXTENSIONMANAGER_PROPERTY_NAME = "extensionManager"
+      ACTIVATION_NAMESPACES_PROPERTY_NAME = "activationNamespaces"
+      ACTIVATION_NAMESPACES_SETTER_METHOD_NAME = "setActivationNamespaces"
+      BUS_EXTENSION_RESOURCE = "META-INF/cxf/bus-extensions.txt"
+      loader = class com.ibm.ws.classloading.internal.AppClassLoader@5833f357
+      resourceManager = class org.apache.cxf.resource.DefaultResourceManager@4631a043
+      all = class java.util.concurrent.ConcurrentHashMap@d81e00f
+      ordered = class java.util.concurrent.CopyOnWriteArrayList@672f6765
+      activated = class java.util.concurrent.ConcurrentHashMap@55efb7f
+      bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+    in = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@e9fd4e9
+      serialVersionUID = 1783937035760941219
+      modCount = class java.util.concurrent.atomic.AtomicInteger@d95ca7a
+      serialVersionUID = 8673264195747942595
+      lock = class java.lang.Object@7a158566
+      array = class java.lang.Object[1]
+    out = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@7e4305dc
+      serialVersionUID = 1783937035760941219
+      modCount = class java.util.concurrent.atomic.AtomicInteger@42662bbb
+      serialVersionUID = 8673264195747942595
+      lock = class java.lang.Object@5b8d6e62
+      array = class java.lang.Object[2]
+    outFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@4004a39b
+      serialVersionUID = 1783937035760941219
+      modCount = class java.util.concurrent.atomic.AtomicInteger@2ecf6c76
+      serialVersionUID = 8673264195747942595
+      lock = class java.lang.Object@5d87a1e7
+      array = class java.lang.Object[0]
+    inFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@462f5151
+      serialVersionUID = 1783937035760941219
+      modCount = class java.util.concurrent.atomic.AtomicInteger@eed5cab
+      serialVersionUID = 8673264195747942595
+      lock = class java.lang.Object@2d889116
+      array = class java.lang.Object[0]
+  providerComparator = null
+  providerCache = class org.apache.cxf.jaxrs.provider.ProviderCache@4eba3879
+    MAX_PROVIDER_CACHE_SIZE = 100
+    readerProviderCache = class java.util.concurrent.ConcurrentHashMap@79bf6efe
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = class java.util.concurrent.ConcurrentHashMap$Node[16]
+      nextTable = null
+      baseCount = 1
+      sizeCtl = 12
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    writerProviderCache = class java.util.concurrent.ConcurrentHashMap@6d412f7b
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = class java.util.concurrent.ConcurrentHashMap$Node[16]
+      nextTable = null
+      baseCount = 1
+      sizeCtl = 12
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    checkAllCandidates = true
+  genericInterfacesCache = class java.util.concurrent.ConcurrentHashMap@3cd97a1d
+    serialVersionUID = 7249069246763182397
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_CAPACITY = 16
+    MAX_ARRAY_SIZE = 2147483639
+    DEFAULT_CONCURRENCY_LEVEL = 16
+    LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    MIN_TRANSFER_STRIDE = 16
+    RESIZE_STAMP_BITS = 16
+    MAX_RESIZERS = 65535
+    RESIZE_STAMP_SHIFT = 16
+    MOVED = -1
+    TREEBIN = -2
+    RESERVED = -3
+    HASH_BITS = 2147483647
+    NCPU = 12
+    serialPersistentFields = class java.io.ObjectStreamField[3]
+      ObjectStreamField[0] = class java.io.ObjectStreamField@2c5084e6
+      ObjectStreamField[1] = class java.io.ObjectStreamField@17f10798
+      ObjectStreamField[2] = class java.io.ObjectStreamField@70883b2f
+    table = class java.util.concurrent.ConcurrentHashMap$Node[64]
+      Node[0] = null
+      Node[1] = class java.util.concurrent.ConcurrentHashMap$Node@4522fcc
+      Node[2] = null
+      Node[3] = null
+      Node[4] = class java.util.concurrent.ConcurrentHashMap$Node@64ba3e38
+      Node[5] = null
+      Node[6] = null
+      Node[7] = class java.util.concurrent.ConcurrentHashMap$Node@4085db96
+      Node[8] = class java.util.concurrent.ConcurrentHashMap$Node@4b8f0f18
+      Node[9] = null
+      Node[10] = null
+      Node[11] = null
+      Node[12] = null
+      Node[13] = null
+      Node[14] = class java.util.concurrent.ConcurrentHashMap$Node@5e3675ea
+      Node[15] = class java.util.concurrent.ConcurrentHashMap$Node@6bc8cbea
+      Node[16] = class java.util.concurrent.ConcurrentHashMap$Node@57fe46e
+      Node[17] = class java.util.concurrent.ConcurrentHashMap$Node@363bdc16
+      Node[18] = null
+      Node[19] = null
+      Node[20] = null
+      Node[21] = null
+      Node[22] = class java.util.concurrent.ConcurrentHashMap$Node@2193cc5d
+      Node[23] = null
+      Node[24] = null
+      Node[25] = null
+      Node[26] = class java.util.concurrent.ConcurrentHashMap$Node@5b4f761e
+      Node[27] = null
+      Node[28] = null
+      Node[29] = null
+      Node[30] = null
+      Node[31] = class java.util.concurrent.ConcurrentHashMap$Node@48eb925d
+      Node[32] = null
+      Node[33] = null
+      Node[34] = class java.util.concurrent.ConcurrentHashMap$Node@76757106
+      Node[35] = null
+      Node[36] = null
+      Node[37] = class java.util.concurrent.ConcurrentHashMap$Node@cd3a732
+      Node[38] = null
+      Node[39] = class java.util.concurrent.ConcurrentHashMap$Node@646011d2
+      Node[40] = class java.util.concurrent.ConcurrentHashMap$Node@44bf64c6
+      Node[41] = null
+      Node[42] = null
+      Node[43] = class java.util.concurrent.ConcurrentHashMap$Node@191fd016
+      Node[44] = class java.util.concurrent.ConcurrentHashMap$Node@8640e30
+      Node[45] = null
+      Node[46] = class java.util.concurrent.ConcurrentHashMap$Node@6cee706f
+      Node[47] = null
+      Node[48] = class java.util.concurrent.ConcurrentHashMap$Node@53c8a060
+      Node[49] = class java.util.concurrent.ConcurrentHashMap$Node@34b0556f
+      Node[50] = null
+      Node[51] = null
+      Node[52] = null
+      Node[53] = class java.util.concurrent.ConcurrentHashMap$Node@1c0dd847
+      Node[54] = null
+      Node[55] = class java.util.concurrent.ConcurrentHashMap$Node@3ffbea1
+      Node[56] = null
+      Node[57] = class java.util.concurrent.ConcurrentHashMap$Node@1522c51e
+      Node[58] = null
+      Node[59] = class java.util.concurrent.ConcurrentHashMap$Node@230fe1f8
+      Node[60] = class java.util.concurrent.ConcurrentHashMap$Node@51b2da3e
+      Node[61] = null
+      Node[62] = null
+      Node[63] = class java.util.concurrent.ConcurrentHashMap$Node@2fc67c1f
+    nextTable = null
+    baseCount = 34
+    sizeCtl = 48
+    transferIndex = 0
+    cellsBusy = 0
+    counterCells = null
+    keySet = null
+    values = null
+    entrySet = null
+    U = class jdk.internal.misc.Unsafe@69cff604
+      Failed to resolve fields for jdk.internal.misc.Unsafe = "java.lang.reflect.InaccessibleObjectException: Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.Unsafe.theUnsafe accessible: module java.base does not "opens jdk.internal.misc" to unnamed module @2fd6b6c7
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
+	at java.base/java.lang.reflect.AccessibleObject.setAccessible(AccessibleObject.java:123)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:316)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:310)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getFields(IntrospectionLevelMember.java:310)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.introspectViaReflection(IntrospectionLevelMember.java:199)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getChildren(IntrospectionLevelMember.java:163)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevel.getNextLevel(IntrospectionLevel.java:100)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspect(IncidentStreamImpl.java:437)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWrite(IncidentStreamImpl.java:129)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWriteLine(IncidentStreamImpl.java:164)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:102)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:35)
+	at com.ibm.ws.logging.internal.impl.IncidentImpl.log(IncidentImpl.java:249)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.log(BaseFFDCService.java:239)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.processException(BaseFFDCService.java:216)
+	at com.ibm.ws.ffdc.FFDCFilter.processException(FFDCFilter.java:94)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.serializeMessage(JAXRSOutInterceptor.java:273)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.processResponse(JAXRSOutInterceptor.java:124)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.handleMessage(JAXRSOutInterceptor.java:85)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.interceptor.OutgoingChainInterceptor.handleMessage(OutgoingChainInterceptor.java:90)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:146)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doGet(IBMRestServlet.java:112)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:96)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:743)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:440)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:182)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:56)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:996)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1134)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1005)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:75)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:83)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:927)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1023)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:417)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:376)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:466)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:331)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:501)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:571)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:926)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1015)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+"
+    SIZECTL = 20
+    TRANSFERINDEX = 32
+    BASECOUNT = 24
+    CELLSBUSY = 36
+    CELLVALUE = 144
+    ABASE = 16
+    ASHIFT = 2
+    keySet = null
+    values = null
+  emptyType = interface java.lang.reflect.Type[0]
+  readerMediaTypesMap = class java.util.IdentityHashMap@644e0486
+    DEFAULT_CAPACITY = 32
+    MINIMUM_CAPACITY = 4
+    MAXIMUM_CAPACITY = 536870912
+    table = class java.lang.Object[64]
+      Object[0] = null
+      Object[1] = null
+      Object[2] = null
+      Object[3] = null
+      Object[4] = null
+      Object[5] = null
+      Object[6] = null
+      Object[7] = null
+      Object[8] = null
+      Object[9] = null
+      Object[10] = class org.apache.cxf.jaxrs.provider.JAXBElementTypedProvider@79f1efa5
+      Object[11] = class java.util.ArrayList@108f1641
+      Object[12] = null
+      Object[13] = null
+      Object[14] = class org.apache.cxf.jaxrs.provider.PrimitiveTextProvider@24fef927
+      Object[15] = class java.util.ArrayList@21c5652
+      Object[16] = class com.ibm.ws.jaxrs21.providers.json.JsonBProvider@29f9ef48
+      Object[17] = class java.util.ArrayList@16905a3b
+      Object[18] = null
+      Object[19] = null
+      Object[20] = class org.apache.cxf.jaxrs.provider.JAXBElementProvider@dce780a
+      Object[21] = class java.util.ArrayList@79ab498e
+      Object[22] = null
+      Object[23] = null
+      Object[24] = null
+      Object[25] = null
+      Object[26] = class com.ibm.ws.jaxrs21.providers.json.JsonPProvider@7a1d16ed
+      Object[27] = class java.util.ArrayList@11fe75e4
+      Object[28] = class org.apache.cxf.jaxrs.provider.SourceProvider@1669c68e
+      Object[29] = class java.util.ArrayList@71300f4f
+      Object[30] = class org.apache.cxf.jaxrs.provider.DataSourceProvider@4afc6cae
+      Object[31] = class java.util.Collections$SingletonList@65e5d2d0
+      Object[32] = class org.apache.cxf.jaxrs.provider.StringTextProvider@20e4616f
+      Object[33] = class java.util.Collections$SingletonList@46a100db
+      Object[34] = null
+      Object[35] = null
+      Object[36] = null
+      Object[37] = null
+      Object[38] = null
+      Object[39] = null
+      Object[40] = null
+      Object[41] = null
+      Object[42] = class com.ibm.ws.jaxrs20.providers.multipart.IBMMultipartProvider@5709dc55
+      Object[43] = class java.util.ArrayList@24921cbe
+      Object[44] = class org.apache.cxf.jaxrs.provider.BinaryDataProvider@458832d6
+      Object[45] = class java.util.Collections$SingletonList@55a93514
+      Object[46] = class org.apache.cxf.jaxrs.provider.MultipartProvider@21739dd6
+      Object[47] = class java.util.ArrayList@1e910e23
+      Object[48] = null
+      Object[49] = null
+      Object[50] = null
+      Object[51] = null
+      Object[52] = null
+      Object[53] = null
+      Object[54] = class org.apache.cxf.jaxrs.provider.FormEncodingProvider@7861955b
+      Object[55] = class java.util.ArrayList@50f862f2
+      Object[56] = null
+      Object[57] = null
+      Object[58] = null
+      Object[59] = null
+      Object[60] = null
+      Object[61] = null
+      Object[62] = null
+      Object[63] = null
+    size = 12
+    modCount = 12
+    NULL_KEY = class java.lang.Object@20c5e9ce
+    entrySet = null
+    serialVersionUID = 8188218128353913216
+    keySet = null
+    values = null
+  writerMediaTypesMap = class java.util.IdentityHashMap@11276f04
+    DEFAULT_CAPACITY = 32
+    MINIMUM_CAPACITY = 4
+    MAXIMUM_CAPACITY = 536870912
+    table = class java.lang.Object[64]
+      Object[0] = null
+      Object[1] = null
+      Object[2] = null
+      Object[3] = null
+      Object[4] = null
+      Object[5] = null
+      Object[6] = null
+      Object[7] = null
+      Object[8] = null
+      Object[9] = null
+      Object[10] = class org.apache.cxf.jaxrs.provider.JAXBElementTypedProvider@79f1efa5
+      Object[11] = class java.util.ArrayList@37f5e4b6
+      Object[12] = null
+      Object[13] = null
+      Object[14] = class org.apache.cxf.jaxrs.provider.PrimitiveTextProvider@24fef927
+      Object[15] = class java.util.ArrayList@4ce6e76f
+      Object[16] = class com.ibm.ws.jaxrs21.providers.json.JsonBProvider@29f9ef48
+      Object[17] = class java.util.ArrayList@5eb140c9
+      Object[18] = null
+      Object[19] = null
+      Object[20] = class org.apache.cxf.jaxrs.provider.JAXBElementProvider@dce780a
+      Object[21] = class java.util.ArrayList@7fea6499
+      Object[22] = class org.apache.cxf.jaxrs.nio.NioMessageBodyWriter@334b5d6b
+      Object[23] = class java.util.Collections$SingletonList@67a2ff86
+      Object[24] = null
+      Object[25] = null
+      Object[26] = class com.ibm.ws.jaxrs21.providers.json.JsonPProvider@7a1d16ed
+      Object[27] = class java.util.ArrayList@1c84b182
+      Object[28] = class org.apache.cxf.jaxrs.provider.SourceProvider@1669c68e
+      Object[29] = class java.util.ArrayList@48e71dd3
+      Object[30] = class org.apache.cxf.jaxrs.provider.DataSourceProvider@4afc6cae
+      Object[31] = class java.util.Collections$SingletonList@648576fa
+      Object[32] = class org.apache.cxf.jaxrs.provider.StringTextProvider@20e4616f
+      Object[33] = class java.util.Collections$SingletonList@14abfb23
+      Object[34] = null
+      Object[35] = null
+      Object[36] = null
+      Object[37] = null
+      Object[38] = null
+      Object[39] = null
+      Object[40] = null
+      Object[41] = null
+      Object[42] = class com.ibm.ws.jaxrs20.providers.multipart.IBMMultipartProvider@5709dc55
+      Object[43] = class java.util.ArrayList@2d1a4095
+      Object[44] = class org.apache.cxf.jaxrs.provider.BinaryDataProvider@458832d6
+      Object[45] = class java.util.Collections$SingletonList@5d63c960
+      Object[46] = class org.apache.cxf.jaxrs.provider.MultipartProvider@21739dd6
+      Object[47] = class java.util.ArrayList@129e5690
+      Object[48] = null
+      Object[49] = null
+      Object[50] = null
+      Object[51] = null
+      Object[52] = null
+      Object[53] = null
+      Object[54] = class org.apache.cxf.jaxrs.provider.FormEncodingProvider@7861955b
+      Object[55] = class java.util.ArrayList@5927d503
+      Object[56] = null
+      Object[57] = null
+      Object[58] = null
+      Object[59] = null
+      Object[60] = null
+      Object[61] = null
+      Object[62] = null
+      Object[63] = null
+    size = 13
+    modCount = 13
+    NULL_KEY = class java.lang.Object@20c5e9ce
+    entrySet = null
+    serialVersionUID = 8188218128353913216
+    keySet = null
+    values = null
+  referenceQueue = class java.lang.ref.ReferenceQueue@ec1e4a9
+    NULL = class java.lang.ref.ReferenceQueue$Null@260ae6b4
+      NULL = class java.lang.ref.ReferenceQueue$Null@260ae6b4
+      ENQUEUED = class java.lang.ref.ReferenceQueue$Null@4eab434b
+      lock = class java.lang.ref.ReferenceQueue$Lock@35cfb53b
+      head = null
+      queueLength = 0
+      $assertionsDisabled = true
+    ENQUEUED = class java.lang.ref.ReferenceQueue$Null@4eab434b
+      NULL = class java.lang.ref.ReferenceQueue$Null@260ae6b4
+      ENQUEUED = class java.lang.ref.ReferenceQueue$Null@4eab434b
+      lock = class java.lang.ref.ReferenceQueue$Lock@32482fa5
+      head = null
+      queueLength = 0
+      $assertionsDisabled = true
+    lock = class java.lang.ref.ReferenceQueue$Lock@33cebbb0
+    head = null
+    queueLength = 0
+    $assertionsDisabled = true
+  serialVersionUID = 277769312427744354
+
+Dump of objectArray[1]
+Object type = org.apache.cxf.message.MessageImpl
+  serialVersionUID = -3020763696429459865
+  exchange = class org.apache.cxf.message.ExchangeImpl@edfbf89
+    serialVersionUID = -3112077559217623594
+    destination = class org.apache.cxf.transport.servlet.ServletDestination@2926f28e
+      LOG = class com.ibm.ws.logging.internal.WsLogger@acfb6ed
+      HTTP_REQUEST = "HTTP.REQUEST"
+      HTTP_RESPONSE = "HTTP.RESPONSE"
+      HTTP_CONTEXT = "HTTP.CONTEXT"
+      HTTP_CONFIG = "HTTP.CONFIG"
+      HTTP_CONTEXT_MATCH_STRATEGY = "HTTP_CONTEXT_MATCH_STRATEGY"
+      RESPONSE_HEADERS_COPIED = "http.headers.copied"
+      RESPONSE_COMMITED = "http.response.done"
+      REQUEST_REDIRECTED = "http.request.redirected"
+      CXF_CONTINUATION_MESSAGE = "cxf.continuation.message"
+      CXF_ASYNC_CONTEXT = "cxf.async.context"
+      SERVICE_REDIRECTION = "http.service.redirection"
+      HTTP_BASE_PATH = "http.base.path"
+      SSL_CIPHER_SUITE_ATTRIBUTE = "javax.servlet.request.cipher_suite"
+      SSL_PEER_CERT_CHAIN_ATTRIBUTE = "javax.servlet.request.X509Certificate"
+      DECODE_BASIC_AUTH_WITH_ISO8859 = "decode.basicauth.with.iso8859"
+      tc = class com.ibm.websphere.ras.TraceComponent@1678cc19
+      bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+      registry = class org.apache.cxf.transport.http.DestinationRegistryImpl@29f216bd
+      path = "/api/"
+      serverPolicy = class org.apache.cxf.transports.http.configuration.HTTPServerPolicy@18401f03
+      contextMatchStrategy = "stem"
+      fixedParameterOrder = false
+      multiplexWithAddress = false
+      certConstraints = null
+      decodeBasicAuthWithIso8859 = false
+      cproviderFactory = null
+      enableWebSocket = false
+      serverPolicyCalced = true
+      serialVersionUID = -137146086541010707
+      MULTIPLEX_ID_QNAME = class javax.xml.namespace.QName@5759b8cc
+      reference = class org.apache.cxf.ws.addressing.EndpointReferenceType@20d61414
+      endpointInfo = class org.apache.cxf.service.model.EndpointInfo@1b7c6a0a
+      bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+      incomingObserver = class org.apache.cxf.transport.ChainInitiationObserver@1928b94d
+    oneWay = false
+    synchronous = true
+    inMessage = class org.apache.cxf.message.MessageImpl@15d7d7e6
+      serialVersionUID = -3020763696429459865
+      exchange = class org.apache.cxf.message.ExchangeImpl@edfbf89
+      id = null
+      interceptorChain = class org.apache.cxf.phase.PhaseInterceptorChain@1fda6ec7
+      contents = class java.lang.Object[20]
+      index = 6
+      contextCache = class org.apache.cxf.message.MessageImpl$1@77e71884
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@33f0baf0
+      serialVersionUID = -4590903451121887
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@33174c16
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[32]
+      entrySet = class java.util.HashMap$EntrySet@47fefa90
+      size = 30
+      modCount = 30
+      threshold = 32
+      loadFactor = 1.0
+      keySet = null
+      values = null
+    outMessage = class org.apache.cxf.message.MessageImpl@4b0848a1
+    inFaultMessage = null
+    outFaultMessage = null
+    session = class org.apache.cxf.transport.http.HTTPSession@62517525
+      request = class com.ibm.ws.jaxrs20.server.JaxRsHttpServletRequestAdapter@1ca6262b
+      session = null
+    bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+      busCounter = class java.util.concurrent.atomic.AtomicInteger@705af2ff
+      serialVersionUID = 2386792285914827878
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@39cd1987
+      BUS_PROPERTY_NAME = "bus"
+      BUS_ID_PROPERTY_NAME = "org.apache.cxf.bus.id"
+      extensions = class java.util.concurrent.ConcurrentHashMap@55efb7f
+      missingExtensions = class java.util.concurrent.CopyOnWriteArraySet@32ebcdb8
+      id = "SolTest-Server-Bus"
+      state = class org.apache.cxf.Bus$BusState@3626ed2b
+      features = class java.util.concurrent.CopyOnWriteArrayList@114c2c1a
+      properties = class java.util.concurrent.ConcurrentHashMap@63bbb84f
+      extensionManager = class org.apache.cxf.bus.extension.ExtensionManagerImpl@fd12f8d
+      in = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@e9fd4e9
+      out = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@7e4305dc
+      outFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@4004a39b
+      inFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@462f5151
+    endpoint = class org.apache.cxf.endpoint.EndpointImpl@58838151
+      serialVersionUID = -7660560719050162091
+      LOG = class com.ibm.ws.logging.internal.WsLogger@2fb7c9a4
+      BUNDLE = class java.util.PropertyResourceBundle@5c586b7c
+      service = class org.apache.cxf.jaxrs.JAXRSServiceImpl@462fba4d
+      binding = class org.apache.cxf.jaxrs.JAXRSBinding@4991e4c8
+      endpointInfo = class org.apache.cxf.service.model.EndpointInfo@1b7c6a0a
+      executor = null
+      bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+      inFaultObserver = class org.apache.cxf.interceptor.InFaultChainInitiatorObserver@41b89d7c
+      outFaultObserver = class org.apache.cxf.interceptor.OutFaultChainInitiatorObserver@39b6e34f
+      activeFeatures = null
+      cleanupHooks = null
+      serialVersionUID = -1915876045710441978
+      in = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@50d39606
+      out = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@4f4f14eb
+      outFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@379b1b32
+      inFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@32cd33c0
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = class java.util.concurrent.ConcurrentHashMap$Node[8]
+      nextTable = null
+      baseCount = 4
+      sizeCtl = 6
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = class java.util.concurrent.ConcurrentHashMap$EntrySetView@493d4b52
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    service = class org.apache.cxf.jaxrs.JAXRSServiceImpl@462fba4d
+      serialVersionUID = 6765400202555126993
+      classResourceInfos = class java.util.ArrayList@71d1f37d
+      dataBinding = null
+      executor = null
+      invoker = class com.ibm.ws.jaxrs20.server.LibertyJaxRsInvoker@744c4d
+      endpoints = class java.util.HashMap@75f4360d
+      address = null
+      createServiceModel = false
+      serviceName = null
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@4634ecd
+      serialVersionUID = -1915876045710441978
+      in = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@7feb9721
+      out = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@1dfd9ba
+      outFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@23ebfbe8
+      inFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@77fbf5c6
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = null
+      nextTable = null
+      baseCount = 0
+      sizeCtl = 0
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    binding = class org.apache.cxf.jaxrs.JAXRSBinding@4991e4c8
+      bindingInfo = class org.apache.cxf.service.model.BindingInfo@2fe75444
+      in = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@2a2aca24
+      out = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@29551680
+      outFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@691be3dd
+      inFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@7ccbdfce
+    bindingOp = null
+    serialVersionUID = 7249069246763182397
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_CAPACITY = 16
+    MAX_ARRAY_SIZE = 2147483639
+    DEFAULT_CONCURRENCY_LEVEL = 16
+    LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    MIN_TRANSFER_STRIDE = 16
+    RESIZE_STAMP_BITS = 16
+    MAX_RESIZERS = 65535
+    RESIZE_STAMP_SHIFT = 16
+    MOVED = -1
+    TREEBIN = -2
+    RESERVED = -3
+    HASH_BITS = 2147483647
+    NCPU = 12
+    serialPersistentFields = class java.io.ObjectStreamField[3]
+      ObjectStreamField[0] = class java.io.ObjectStreamField@2c5084e6
+      ObjectStreamField[1] = class java.io.ObjectStreamField@17f10798
+      ObjectStreamField[2] = class java.io.ObjectStreamField@70883b2f
+    table = class java.util.concurrent.ConcurrentHashMap$Node[16]
+      Node[0] = null
+      Node[1] = class java.util.concurrent.ConcurrentHashMap$Node@51b151bd
+      Node[2] = class java.util.concurrent.ConcurrentHashMap$Node@46b17719
+      Node[3] = null
+      Node[4] = class java.util.concurrent.ConcurrentHashMap$Node@69ae48a3
+      Node[5] = null
+      Node[6] = class java.util.concurrent.ConcurrentHashMap$Node@7f424c99
+      Node[7] = null
+      Node[8] = null
+      Node[9] = null
+      Node[10] = class java.util.concurrent.ConcurrentHashMap$Node@24a5c675
+      Node[11] = class java.util.concurrent.ConcurrentHashMap$Node@69e16447
+      Node[12] = null
+      Node[13] = null
+      Node[14] = null
+      Node[15] = class java.util.concurrent.ConcurrentHashMap$Node@7291c288
+    nextTable = null
+    baseCount = 8
+    sizeCtl = 12
+    transferIndex = 0
+    cellsBusy = 0
+    counterCells = null
+    keySet = null
+    values = null
+    entrySet = class java.util.concurrent.ConcurrentHashMap$EntrySetView@4ae17f86
+      serialVersionUID = 2249069246763182397
+      serialVersionUID = 7249069246763182397
+      map = class org.apache.cxf.message.ExchangeImpl@edfbf89
+      OOME_MSG = "Required array size too large"
+    U = class jdk.internal.misc.Unsafe@69cff604
+      Failed to resolve fields for jdk.internal.misc.Unsafe = "java.lang.reflect.InaccessibleObjectException: Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.Unsafe.theUnsafe accessible: module java.base does not "opens jdk.internal.misc" to unnamed module @2fd6b6c7
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
+	at java.base/java.lang.reflect.AccessibleObject.setAccessible(AccessibleObject.java:123)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:316)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:310)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getFields(IntrospectionLevelMember.java:310)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.introspectViaReflection(IntrospectionLevelMember.java:199)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getChildren(IntrospectionLevelMember.java:163)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevel.getNextLevel(IntrospectionLevel.java:100)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspect(IncidentStreamImpl.java:437)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWrite(IncidentStreamImpl.java:129)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWriteLine(IncidentStreamImpl.java:164)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:102)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:35)
+	at com.ibm.ws.logging.internal.impl.IncidentImpl.log(IncidentImpl.java:249)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.log(BaseFFDCService.java:239)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.processException(BaseFFDCService.java:216)
+	at com.ibm.ws.ffdc.FFDCFilter.processException(FFDCFilter.java:94)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.serializeMessage(JAXRSOutInterceptor.java:273)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.processResponse(JAXRSOutInterceptor.java:124)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.handleMessage(JAXRSOutInterceptor.java:85)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.interceptor.OutgoingChainInterceptor.handleMessage(OutgoingChainInterceptor.java:90)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:146)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doGet(IBMRestServlet.java:112)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:96)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:743)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:440)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:182)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:56)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:996)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1134)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1005)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:75)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:83)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:927)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1023)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:417)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:376)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:466)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:331)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:501)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:571)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:926)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1015)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+"
+    SIZECTL = 20
+    TRANSFERINDEX = 32
+    BASECOUNT = 24
+    CELLSBUSY = 36
+    CELLVALUE = 144
+    ABASE = 16
+    ASHIFT = 2
+    keySet = null
+    values = null
+  id = null
+  interceptorChain = class org.apache.cxf.phase.PhaseInterceptorChain@7c32a135
+    PREVIOUS_MESSAGE = "org.apache.cxf.phase.PhaseInterceptorChain.PREVIOUS_MESSAGE"
+    LOG = class com.ibm.ws.logging.internal.WsLogger@31ba5d75
+      tc = class com.ibm.websphere.ras.TraceComponent@4df410b2
+      ivCachedResourceBundleName = null
+      ivCachedResourceBundle = null
+      ivComponent = null
+      ivOrganization = null
+      ivProduct = null
+      ivMinimumLocalizationLevelIntValue = 625
+      ivTC = class com.ibm.websphere.ras.TraceComponent@f135ac4
+      loggerRegistrationComponent = class java.lang.ThreadLocal@5bb01559
+      emptyHandlers = class java.util.logging.Handler[0]
+      offValue = 2147483647
+      SYSTEM_LOGGER_RB_NAME = "sun.util.logging.resources.logging"
+      SYSTEM_BUNDLE = class java.util.logging.Logger$LoggerBundle@2356cf19
+      NO_RESOURCE_BUNDLE = class java.util.logging.Logger$LoggerBundle@78171cf7
+      config = class java.util.logging.Logger$ConfigurationData@3c8ed2ac
+      manager = class com.ibm.ws.kernel.boot.logging.WsLogManager@2d72d6b
+      name = "org.apache.cxf.phase.PhaseInterceptorChainorg.eclipse.osgi.internal.loader.EquinoxClassLoader@3b02742[com.ibm.ws.org.apache.cxf.cxf.core.3.2:1.0.23.cl180420181121-0300(id=203)]"
+      loggerBundle = class java.util.logging.Logger$LoggerBundle@78171cf7
+      anonymous = false
+      catalog = null
+      catalogName = null
+      catalogLocale = null
+      treeLock = class java.lang.Object@77c08eb2
+      parent = class java.util.logging.LogManager$RootLogger@72cc60f0
+      kids = null
+      callerModuleRef = null
+      isSystemLogger = false
+      GLOBAL_LOGGER_NAME = "global"
+      global = class java.util.logging.Logger@3001def3
+    CURRENT_MESSAGE = class java.lang.ThreadLocal@77cb582e
+      threadLocalHashCode = 1007607246
+      nextHashCode = class java.util.concurrent.atomic.AtomicInteger@7873a817
+      HASH_INCREMENT = 1640531527
+    nameMap = class java.util.HashMap@36ea945e
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[64]
+      entrySet = null
+      size = 32
+      modCount = 32
+      threshold = 48
+      loadFactor = 0.75
+      keySet = null
+      values = null
+    phases = class org.apache.cxf.phase.Phase[32]
+      Phase[0] = class org.apache.cxf.phase.Phase@107f5a19
+      Phase[1] = class org.apache.cxf.phase.Phase@538df044
+      Phase[2] = class org.apache.cxf.phase.Phase@2bd72ff4
+      Phase[3] = class org.apache.cxf.phase.Phase@61068390
+      Phase[4] = class org.apache.cxf.phase.Phase@b43a23b
+      Phase[5] = class org.apache.cxf.phase.Phase@37707cc7
+      Phase[6] = class org.apache.cxf.phase.Phase@254a5d52
+      Phase[7] = class org.apache.cxf.phase.Phase@70855068
+      Phase[8] = class org.apache.cxf.phase.Phase@66c17639
+      Phase[9] = class org.apache.cxf.phase.Phase@52e3a862
+      Phase[10] = class org.apache.cxf.phase.Phase@25b4dfa1
+      Phase[11] = class org.apache.cxf.phase.Phase@7fe8cd6f
+      Phase[12] = class org.apache.cxf.phase.Phase@12f50c15
+      Phase[13] = class org.apache.cxf.phase.Phase@5d9a1691
+      Phase[14] = class org.apache.cxf.phase.Phase@5e509354
+      Phase[15] = class org.apache.cxf.phase.Phase@67eaae44
+      Phase[16] = class org.apache.cxf.phase.Phase@5dc59308
+      Phase[17] = class org.apache.cxf.phase.Phase@50e638bf
+      Phase[18] = class org.apache.cxf.phase.Phase@af6dbc4
+      Phase[19] = class org.apache.cxf.phase.Phase@385ccc50
+      Phase[20] = class org.apache.cxf.phase.Phase@49f04580
+      Phase[21] = class org.apache.cxf.phase.Phase@2832bfc1
+      Phase[22] = class org.apache.cxf.phase.Phase@14a669f8
+      Phase[23] = class org.apache.cxf.phase.Phase@4a460970
+      Phase[24] = class org.apache.cxf.phase.Phase@1d199fd
+      Phase[25] = class org.apache.cxf.phase.Phase@3ca0e2b1
+      Phase[26] = class org.apache.cxf.phase.Phase@1beeb574
+      Phase[27] = class org.apache.cxf.phase.Phase@619932f0
+      Phase[28] = class org.apache.cxf.phase.Phase@6c0a514f
+      Phase[29] = class org.apache.cxf.phase.Phase@57049315
+      Phase[30] = class org.apache.cxf.phase.Phase@392fc994
+      Phase[31] = class org.apache.cxf.phase.Phase@118972f3
+    heads = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder[32]
+      InterceptorHolder[0] = null
+      InterceptorHolder[1] = null
+      InterceptorHolder[2] = null
+      InterceptorHolder[3] = null
+      InterceptorHolder[4] = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder@1fb1cca7
+      InterceptorHolder[5] = null
+      InterceptorHolder[6] = null
+      InterceptorHolder[7] = null
+      InterceptorHolder[8] = null
+      InterceptorHolder[9] = null
+      InterceptorHolder[10] = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder@1e61036c
+      InterceptorHolder[11] = null
+      InterceptorHolder[12] = null
+      InterceptorHolder[13] = null
+      InterceptorHolder[14] = null
+      InterceptorHolder[15] = null
+      InterceptorHolder[16] = null
+      InterceptorHolder[17] = null
+      InterceptorHolder[18] = null
+      InterceptorHolder[19] = null
+      InterceptorHolder[20] = null
+      InterceptorHolder[21] = null
+      InterceptorHolder[22] = null
+      InterceptorHolder[23] = null
+      InterceptorHolder[24] = null
+      InterceptorHolder[25] = null
+      InterceptorHolder[26] = null
+      InterceptorHolder[27] = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder@252d4643
+      InterceptorHolder[28] = null
+      InterceptorHolder[29] = null
+      InterceptorHolder[30] = null
+      InterceptorHolder[31] = null
+    tails = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder[32]
+      InterceptorHolder[0] = null
+      InterceptorHolder[1] = null
+      InterceptorHolder[2] = null
+      InterceptorHolder[3] = null
+      InterceptorHolder[4] = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder@1fb1cca7
+      InterceptorHolder[5] = null
+      InterceptorHolder[6] = null
+      InterceptorHolder[7] = null
+      InterceptorHolder[8] = null
+      InterceptorHolder[9] = null
+      InterceptorHolder[10] = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder@9bccf39
+      InterceptorHolder[11] = null
+      InterceptorHolder[12] = null
+      InterceptorHolder[13] = null
+      InterceptorHolder[14] = null
+      InterceptorHolder[15] = null
+      InterceptorHolder[16] = null
+      InterceptorHolder[17] = null
+      InterceptorHolder[18] = null
+      InterceptorHolder[19] = null
+      InterceptorHolder[20] = null
+      InterceptorHolder[21] = null
+      InterceptorHolder[22] = null
+      InterceptorHolder[23] = null
+      InterceptorHolder[24] = null
+      InterceptorHolder[25] = null
+      InterceptorHolder[26] = null
+      InterceptorHolder[27] = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder@252d4643
+      InterceptorHolder[28] = null
+      InterceptorHolder[29] = null
+      InterceptorHolder[30] = null
+      InterceptorHolder[31] = null
+    hasAfters = {false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false} /* array length = 32 */
+    state = class org.apache.cxf.interceptor.InterceptorChain$State@73dd1c89
+      PAUSED = class org.apache.cxf.interceptor.InterceptorChain$State@26908bcc
+      SUSPENDED = class org.apache.cxf.interceptor.InterceptorChain$State@7d98ffed
+      EXECUTING = class org.apache.cxf.interceptor.InterceptorChain$State@73dd1c89
+      COMPLETE = class org.apache.cxf.interceptor.InterceptorChain$State@14923b5f
+      ABORTED = class org.apache.cxf.interceptor.InterceptorChain$State@37568544
+      $VALUES = class org.apache.cxf.interceptor.InterceptorChain$State[5]
+      name = "EXECUTING"
+      ordinal = 2
+    pausedMessage = null
+    faultObserver = class org.apache.cxf.interceptor.OutFaultChainInitiatorObserver@39b6e34f
+      LOG = class com.ibm.ws.logging.internal.WsLogger@632f0ccc
+      bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+      loader = null
+      $assertionsDisabled = true
+    iterator = class org.apache.cxf.phase.PhaseInterceptorChain$PhaseInterceptorIterator@a5dc98
+      heads = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder[32]
+      prev = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder@1e61036c
+      first = class org.apache.cxf.phase.PhaseInterceptorChain$InterceptorHolder@1fb1cca7
+    isFineLogging = false
+    faultOccurred = false
+    chainReleased = false
+  contents = class java.lang.Object[20]
+    Object[0] = class java.lang.Class@7440e464
+      ANNOTATION = 8192
+      ENUM = 16384
+      SYNTHETIC = 4096
+      cachedConstructor = null
+      newInstanceCallerCache = null
+      name = "java.util.List"
+      module = class java.lang.Module@6438a396
+      packageName = "java.util"
+      componentType = null
+      allPermDomain = class java.security.ProtectionDomain@74106232
+      reflectionData = class java.lang.ref.SoftReference@57afbd8a
+      classRedefinedCount = 0
+      genericInfo = class sun.reflect.generics.repository.ClassRepository@7fd2377c
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      serialVersionUID = 3206093459760846163
+      serialPersistentFields = class java.io.ObjectStreamField[0]
+      reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      enumConstants = null
+      enumConstantDirectory = null
+      annotationData = class java.lang.Class$AnnotationData@7ae9081f
+      annotationType = null
+      classValueMap = null
+    Object[1] = class org.apache.cxf.message.MessageContentsList@6122f9db
+      REMOVED_MARKER = class java.lang.Object@67d9fa9f
+      serialVersionUID = -5780720048950696258
+      serialVersionUID = 8683452581122892189
+      DEFAULT_CAPACITY = 10
+      EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      elementData = class java.lang.Object[1]
+      size = 1
+      MAX_ARRAY_SIZE = 2147483639
+      modCount = 0
+      MAX_ARRAY_SIZE = 2147483639
+    Object[2] = class java.lang.Class@2a84aee7
+      ANNOTATION = 8192
+      ENUM = 16384
+      SYNTHETIC = 4096
+      cachedConstructor = null
+      newInstanceCallerCache = null
+      name = null
+      module = class java.lang.Module@6438a396
+      packageName = null
+      componentType = null
+      allPermDomain = class java.security.ProtectionDomain@74106232
+      reflectionData = class java.lang.ref.SoftReference@540a2687
+      classRedefinedCount = 0
+      genericInfo = null
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      serialVersionUID = 3206093459760846163
+      serialPersistentFields = class java.io.ObjectStreamField[0]
+      reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      enumConstants = null
+      enumConstantDirectory = null
+      annotationData = class java.lang.Class$AnnotationData@2b6737b5
+      annotationType = null
+      classValueMap = null
+    Object[3] = class org.apache.cxf.transport.http.AbstractHTTPDestination$WrappedOutputStream@8334087
+      outMessage = class org.apache.cxf.message.MessageImpl@4b0848a1
+      this$0 = class org.apache.cxf.transport.servlet.ServletDestination@2926f28e
+      serialVersionUID = -5017406762137173742
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@760ee1f8
+      wrappedStream = null
+      written = false
+      allowFlush = true
+    Object[4] = null
+    Object[5] = null
+    Object[6] = null
+    Object[7] = null
+    Object[8] = null
+    Object[9] = null
+    Object[10] = null
+    Object[11] = null
+    Object[12] = null
+    Object[13] = null
+    Object[14] = null
+    Object[15] = null
+    Object[16] = null
+    Object[17] = null
+    Object[18] = null
+    Object[19] = null
+  index = 4
+  contextCache = class org.apache.cxf.message.MessageImpl$1@240f5425
+    serialVersionUID = 7067290677790419348
+    this$0 = class org.apache.cxf.message.MessageImpl@4b0848a1
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7b63c326
+      strings[0] = "TraceComponent[org.apache.cxf.message.MessageImpl$1,class org.apache.cxf.message.MessageImpl$1,[],null,null]"
+    serialVersionUID = 362498820763181265
+    DEFAULT_INITIAL_CAPACITY = 16
+    MAXIMUM_CAPACITY = 1073741824
+    DEFAULT_LOAD_FACTOR = 0.75
+    TREEIFY_THRESHOLD = 8
+    UNTREEIFY_THRESHOLD = 6
+    MIN_TREEIFY_CAPACITY = 64
+    table = class java.util.HashMap$Node[64]
+      Node[0] = class java.util.HashMap$Node@663030e5
+      Node[1] = class java.util.HashMap$Node@295c379f
+      Node[2] = null
+      Node[3] = null
+      Node[4] = null
+      Node[5] = class java.util.HashMap$Node@5232b647
+      Node[6] = null
+      Node[7] = null
+      Node[8] = null
+      Node[9] = null
+      Node[10] = class java.util.HashMap$Node@62a8fceb
+      Node[11] = class java.util.HashMap$Node@5785f43
+      Node[12] = class java.util.HashMap$Node@4dd070bc
+      Node[13] = null
+      Node[14] = null
+      Node[15] = null
+      Node[16] = class java.util.HashMap$Node@a1777cf
+      Node[17] = null
+      Node[18] = null
+      Node[19] = class java.util.HashMap$Node@2f7d9dc2
+      Node[20] = null
+      Node[21] = null
+      Node[22] = null
+      Node[23] = null
+      Node[24] = null
+      Node[25] = null
+      Node[26] = null
+      Node[27] = null
+      Node[28] = null
+      Node[29] = null
+      Node[30] = null
+      Node[31] = class java.util.HashMap$Node@68385d29
+      Node[32] = null
+      Node[33] = class java.util.HashMap$Node@26a38502
+      Node[34] = null
+      Node[35] = null
+      Node[36] = class java.util.HashMap$Node@17bb2716
+      Node[37] = null
+      Node[38] = null
+      Node[39] = class java.util.HashMap$Node@54eb2bae
+      Node[40] = null
+      Node[41] = class java.util.HashMap$Node@7e10e50f
+      Node[42] = class java.util.HashMap$Node@44a1f45a
+      Node[43] = class java.util.HashMap$Node@a6ce84f
+      Node[44] = class java.util.HashMap$Node@7d704f7
+      Node[45] = null
+      Node[46] = null
+      Node[47] = class java.util.HashMap$Node@7e16a19f
+      Node[48] = null
+      Node[49] = null
+      Node[50] = class java.util.HashMap$Node@355e9923
+      Node[51] = null
+      Node[52] = null
+      Node[53] = class java.util.HashMap$Node@581d3157
+      Node[54] = class java.util.HashMap$Node@6752661f
+      Node[55] = class java.util.HashMap$Node@2c032933
+      Node[56] = null
+      Node[57] = null
+      Node[58] = null
+      Node[59] = class java.util.HashMap$Node@6dd53a11
+      Node[60] = class java.util.HashMap$Node@5c732975
+      Node[61] = class java.util.HashMap$Node@28e5de7a
+      Node[62] = class java.util.HashMap$Node@1d9a30e4
+      Node[63] = class java.util.HashMap$Node@595b94f4
+    entrySet = null
+    size = 33
+    modCount = 33
+    threshold = 48
+    loadFactor = 0.75
+    keySet = null
+    values = null
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@33f0baf0
+    strings[0] = "TraceComponent[org.apache.cxf.message.MessageImpl,class org.apache.cxf.message.MessageImpl,[],null,null]"
+  serialVersionUID = -4590903451121887
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@33174c16
+    strings[0] = "TraceComponent[org.apache.cxf.message.StringMapImpl,class org.apache.cxf.message.StringMapImpl,[],null,null]"
+  serialVersionUID = 362498820763181265
+  DEFAULT_INITIAL_CAPACITY = 16
+  MAXIMUM_CAPACITY = 1073741824
+  DEFAULT_LOAD_FACTOR = 0.75
+  TREEIFY_THRESHOLD = 8
+  UNTREEIFY_THRESHOLD = 6
+  MIN_TREEIFY_CAPACITY = 64
+  table = class java.util.HashMap$Node[16]
+    Node[0] = null
+    Node[1] = class java.util.HashMap$Node@49d23785
+      hash = 216119457
+      key = "org.apache.cxf.message.Message.PROTOCOL_HEADERS"
+      value = class org.apache.cxf.jaxrs.impl.MetadataMap@714bcf7b
+      next = null
+    Node[2] = null
+    Node[3] = null
+    Node[4] = null
+    Node[5] = class java.util.HashMap$Node@1722ece6
+      hash = 1220367541
+      key = "javax.xml.ws.wsdl.port"
+      value = null
+      next = null
+    Node[6] = null
+    Node[7] = class java.util.HashMap$Node@3cf0438c
+      hash = 1537564087
+      key = "javax.xml.ws.wsdl.interface"
+      value = null
+      next = class java.util.HashMap$Node@56672379
+    Node[8] = null
+    Node[9] = null
+    Node[10] = class java.util.HashMap$Node@6fce6d4b
+      hash = -1597321590
+      key = "javax.xml.ws.wsdl.operation"
+      value = null
+      next = null
+    Node[11] = class java.util.HashMap$Node@37781128
+      hash = 1015414091
+      key = "javax.xml.ws.wsdl.service"
+      value = null
+      next = null
+    Node[12] = class java.util.HashMap$Node@373d9efd
+      hash = -1949596372
+      key = "HTTP.RESPONSE"
+      value = class com.ibm.ws.webcontainer40.srt.SRTServletResponse40@3f9275f8
+      next = class java.util.HashMap$Node@315e8708
+    Node[13] = null
+    Node[14] = null
+    Node[15] = class java.util.HashMap$Node@96f47b5
+      hash = 949031135
+      key = "Content-Type"
+      value = "application/json"
+      next = null
+  entrySet = class java.util.HashMap$EntrySet@3e0dac1d
+    this$0 = class org.apache.cxf.message.MessageImpl@4b0848a1
+    MAX_ARRAY_SIZE = 2147483639
+  size = 9
+  modCount = 9
+  threshold = 16
+  loadFactor = 1.0
+  keySet = null
+  values = null
+
+Dump of objectArray[2]
+Object type = org.apache.cxf.jaxrs.impl.ResponseImpl
+  status = class org.apache.cxf.jaxrs.impl.ResponseImpl$1@1c2287a3
+    val$statusCode = 200
+    val$reasonPhrase = null
+    this$0 = class org.apache.cxf.jaxrs.impl.ResponseImpl@12b39ea
+    serialVersionUID = -1069862965296585861
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@615eef07
+      strings[0] = "TraceComponent[org.apache.cxf.jaxrs.impl.ResponseImpl$1,class org.apache.cxf.jaxrs.impl.ResponseImpl$1,[],null,null]"
+  entity = class java.util.Vector@49eac3f5
+    elementData = class java.lang.Object[4]
+      Object[0] = class colruyt.registration.Article@1304832f
+      Object[1] = class colruyt.registration.Article@636d6924
+      Object[2] = class colruyt.registration.Article@179fcf6c
+      Object[3] = class colruyt.registration.Article@5bc567cd
+    elementCount = 4
+    capacityIncrement = 0
+    serialVersionUID = -2767605614048989439
+    MAX_ARRAY_SIZE = 2147483639
+    modCount = 4
+    MAX_ARRAY_SIZE = 2147483639
+  entityAnnotations = interface java.lang.annotation.Annotation[2]
+    Annotation[0] = class com.sun.proxy.$Proxy53@749c47ca
+      m1 = class java.lang.reflect.Method@793d86ca
+      m2 = class java.lang.reflect.Method@6f092c30
+      m3 = class java.lang.reflect.Method@4525b31f
+      m0 = class java.lang.reflect.Method@5b07d608
+      serialVersionUID = -2222568056686623797
+      constructorParams = class java.lang.Class[1]
+      proxyCache = class jdk.internal.loader.ClassLoaderValue@77846d2c
+      h = class sun.reflect.annotation.AnnotationInvocationHandler@4e190074
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      PROXY_PACKAGE_PREFIX = "com.sun.proxy"
+    Annotation[1] = class com.sun.proxy.$Proxy54@2ca0c4da
+      m1 = class java.lang.reflect.Method@51d493ce
+      m2 = class java.lang.reflect.Method@44138769
+      m4 = class java.lang.reflect.Method@2e6d86ea
+      m0 = class java.lang.reflect.Method@6bdb9780
+      m3 = class java.lang.reflect.Method@1e6433d6
+      serialVersionUID = -2222568056686623797
+      constructorParams = class java.lang.Class[1]
+      proxyCache = class jdk.internal.loader.ClassLoaderValue@77846d2c
+      h = class sun.reflect.annotation.AnnotationInvocationHandler@35a40652
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      PROXY_PACKAGE_PREFIX = "com.sun.proxy"
+  metadata = class org.apache.cxf.jaxrs.impl.MetadataMap@714bcf7b
+    caseInsensitive = true
+    readOnly = false
+    m = class java.util.LinkedHashMap@2c27ef20
+      serialVersionUID = 3801124242820219131
+      head = class java.util.LinkedHashMap$Entry@6857cd2b
+      tail = class java.util.LinkedHashMap$Entry@23675
+      accessOrder = false
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[16]
+      entrySet = null
+      size = 2
+      modCount = 2
+      threshold = 12
+      loadFactor = 0.75
+      keySet = class java.util.LinkedHashMap$LinkedKeySet@634ca185
+      values = null
+  outMessage = null
+  entityClosed = false
+  entityBufferred = false
+  lastEntity = null
+  serialVersionUID = -8945382335698251420
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@6fb45fd5
+    strings[0] = "TraceComponent[org.apache.cxf.jaxrs.impl.ResponseImpl,class org.apache.cxf.jaxrs.impl.ResponseImpl,[],null,null]"
+
+Dump of objectArray[3]
+Object type = org.apache.cxf.jaxrs.model.OperationResourceInfo
+  uriTemplate = class org.apache.cxf.jaxrs.model.URITemplate@4a9821d7
+    TEMPLATE_PARAMETERS = "jaxrs.template.parameters"
+    LIMITED_REGEX_SUFFIX = "(/.*)?"
+    FINAL_MATCH_GROUP = "FINAL_MATCH_GROUP"
+    DEFAULT_PATH_VARIABLE_REGEX = "([^/]+?)"
+    INTEGER_PATH_VARIABLE_REGEX_PATTERN = class java.util.regex.Pattern@45b6a66d
+      UNIX_LINES = 1
+      CASE_INSENSITIVE = 2
+      COMMENTS = 4
+      MULTILINE = 8
+      LITERAL = 16
+      DOTALL = 32
+      UNICODE_CASE = 64
+      CANON_EQ = 128
+      UNICODE_CHARACTER_CLASS = 256
+      ALL_FLAGS = 511
+      serialVersionUID = 5073258162644648461
+      pattern = "\-?[0-9]+"
+      flags = 0
+      flags0 = 0
+      compiled = true
+      normalizedPattern = "\-?[0-9]+"
+      root = class java.util.regex.Pattern$Start@4cd14220
+      matchRoot = class java.util.regex.Pattern$Ques@5399677c
+      buffer = null
+      predicate = null
+      namedGroups = null
+      groupNodes = null
+      topClosureNodes = null
+      localTCNCount = 0
+      hasGroupRef = false
+      temp = null
+      capturingGroupCount = 1
+      localCount = 0
+      cursor = 9
+      patternLength = 0
+      hasSupplementary = false
+      MAX_REPS = 2147483647
+      lookbehindEnd = class java.util.regex.Pattern$1@606be751
+      accept = class java.util.regex.Pattern$Node@219c23e1
+      lastAccept = class java.util.regex.Pattern$LastNode@7109520a
+      $assertionsDisabled = true
+    DECIMAL_PATH_VARIABLE_REGEX_PATTERN = class java.util.regex.Pattern@549c210d
+      UNIX_LINES = 1
+      CASE_INSENSITIVE = 2
+      COMMENTS = 4
+      MULTILINE = 8
+      LITERAL = 16
+      DOTALL = 32
+      UNICODE_CASE = 64
+      CANON_EQ = 128
+      UNICODE_CHARACTER_CLASS = 256
+      ALL_FLAGS = 511
+      serialVersionUID = 5073258162644648461
+      pattern = "[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?"
+      flags = 0
+      flags0 = 0
+      compiled = true
+      normalizedPattern = "[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?"
+      root = class java.util.regex.Pattern$Start@6392f502
+      matchRoot = class java.util.regex.Pattern$Ques@32407b0f
+      buffer = null
+      predicate = null
+      namedGroups = null
+      groupNodes = null
+      topClosureNodes = null
+      localTCNCount = 0
+      hasGroupRef = false
+      temp = null
+      capturingGroupCount = 2
+      localCount = 1
+      cursor = 38
+      patternLength = 0
+      hasSupplementary = false
+      MAX_REPS = 2147483647
+      lookbehindEnd = class java.util.regex.Pattern$1@606be751
+      accept = class java.util.regex.Pattern$Node@219c23e1
+      lastAccept = class java.util.regex.Pattern$LastNode@7109520a
+      $assertionsDisabled = true
+    CHARACTERS_TO_ESCAPE = ".*+$()"
+    SLASH = "/"
+    SLASH_QUOTE = "/;"
+    MAX_URI_TEMPLATE_CACHE_SIZE = 2000
+    URI_TEMPLATE_CACHE = class java.util.concurrent.ConcurrentHashMap@441808d8
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = class java.util.concurrent.ConcurrentHashMap$Node[16]
+      nextTable = null
+      baseCount = 3
+      sizeCtl = 12
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    template = "/"
+    variables = class java.util.ArrayList@b70845b
+      serialVersionUID = 8683452581122892189
+      DEFAULT_CAPACITY = 10
+      EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      elementData = class java.lang.Object[0]
+      size = 0
+      MAX_ARRAY_SIZE = 2147483639
+      modCount = 0
+      MAX_ARRAY_SIZE = 2147483639
+    customVariables = class java.util.ArrayList@7b85de96
+      serialVersionUID = 8683452581122892189
+      DEFAULT_CAPACITY = 10
+      EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      elementData = class java.lang.Object[0]
+      size = 0
+      MAX_ARRAY_SIZE = 2147483639
+      modCount = 0
+      MAX_ARRAY_SIZE = 2147483639
+    templateRegexPattern = class java.util.regex.Pattern@4e241ca2
+      UNIX_LINES = 1
+      CASE_INSENSITIVE = 2
+      COMMENTS = 4
+      MULTILINE = 8
+      LITERAL = 16
+      DOTALL = 32
+      UNICODE_CASE = 64
+      CANON_EQ = 128
+      UNICODE_CHARACTER_CLASS = 256
+      ALL_FLAGS = 511
+      serialVersionUID = 5073258162644648461
+      pattern = "(/.*)?"
+      flags = 0
+      flags0 = 0
+      compiled = true
+      normalizedPattern = "(/.*)?"
+      root = class java.util.regex.Pattern$Start@6746f068
+      matchRoot = class java.util.regex.Pattern$Branch@df2a8c4
+      buffer = null
+      predicate = null
+      namedGroups = null
+      groupNodes = null
+      topClosureNodes = null
+      localTCNCount = 0
+      hasGroupRef = false
+      temp = null
+      capturingGroupCount = 2
+      localCount = 1
+      cursor = 6
+      patternLength = 0
+      hasSupplementary = false
+      MAX_REPS = 2147483647
+      lookbehindEnd = class java.util.regex.Pattern$1@606be751
+      accept = class java.util.regex.Pattern$Node@219c23e1
+      lastAccept = class java.util.regex.Pattern$LastNode@7109520a
+      $assertionsDisabled = true
+    literals = "/"
+    uriChunks = class java.util.ArrayList@4a7e9376
+      serialVersionUID = 8683452581122892189
+      DEFAULT_CAPACITY = 10
+      EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+      elementData = class java.lang.Object[10]
+      size = 1
+      MAX_ARRAY_SIZE = 2147483639
+      modCount = 1
+      MAX_ARRAY_SIZE = 2147483639
+  classResourceInfo = class org.apache.cxf.jaxrs.model.ClassResourceInfo@651779bc
+    uriTemplate = class org.apache.cxf.jaxrs.model.URITemplate@3f12ebd4
+      TEMPLATE_PARAMETERS = "jaxrs.template.parameters"
+      LIMITED_REGEX_SUFFIX = "(/.*)?"
+      FINAL_MATCH_GROUP = "FINAL_MATCH_GROUP"
+      DEFAULT_PATH_VARIABLE_REGEX = "([^/]+?)"
+      INTEGER_PATH_VARIABLE_REGEX_PATTERN = class java.util.regex.Pattern@45b6a66d
+      DECIMAL_PATH_VARIABLE_REGEX_PATTERN = class java.util.regex.Pattern@549c210d
+      CHARACTERS_TO_ESCAPE = ".*+$()"
+      SLASH = "/"
+      SLASH_QUOTE = "/;"
+      MAX_URI_TEMPLATE_CACHE_SIZE = 2000
+      URI_TEMPLATE_CACHE = class java.util.concurrent.ConcurrentHashMap@441808d8
+      template = "/article"
+      variables = class java.util.ArrayList@5f8f4d86
+      customVariables = class java.util.ArrayList@2d08face
+      templateRegexPattern = class java.util.regex.Pattern@6c603291
+      literals = "/article"
+      uriChunks = class java.util.ArrayList@428066c3
+    methodDispatcher = class org.apache.cxf.jaxrs.model.MethodDispatcher@216a8b0a
+      oriToMethod = class java.util.LinkedHashMap@2757a2e8
+      methodToOri = class java.util.LinkedHashMap@16fe3d0e
+      proxyMethodMap = class java.util.concurrent.ConcurrentHashMap@50f8bdb3
+    resourceProvider = class org.apache.cxf.jaxrs.lifecycle.PerRequestResourceProvider@155117ef
+      c = class java.lang.reflect.Constructor@9970ba4
+      postConstructMethod = null
+      preDestroyMethod = null
+      params = class java.lang.Class[0]
+      anns = class [Ljava.lang.annotation.Annotation;[0]
+      genericTypes = class java.lang.Class[0]
+      serialVersionUID = 4330447189587368180
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@5ef4aa75
+    subResources = class java.util.concurrent.ConcurrentHashMap@d3bcf20
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = null
+      nextTable = null
+      baseCount = 0
+      sizeCtl = 0
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@69cff604
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    enableStatic = false
+    createdFromModel = false
+    consumesTypes = null
+    producesTypes = null
+    nameBindings = class java.util.LinkedHashSet@25dfc918
+      serialVersionUID = -2851667679971038690
+      serialVersionUID = -5024744406713321676
+      map = class java.util.LinkedHashMap@69256067
+      PRESENT = class java.lang.Object@629aa37a
+      MAX_ARRAY_SIZE = 2147483639
+    parent = null
+    injectedSubInstances = class java.util.HashSet@50983472
+      serialVersionUID = -5024744406713321676
+      map = class java.util.HashMap@663f89ab
+      PRESENT = class java.lang.Object@629aa37a
+      MAX_ARRAY_SIZE = 2147483639
+    paramFields = null
+    paramMethods = null
+    paramsAvailable = false
+    tc = class com.ibm.websphere.ras.TraceComponent@23c55a8
+      strings[0] = "TraceComponent[org.apache.cxf.jaxrs.model.AbstractResourceInfo,class org.apache.cxf.jaxrs.model.AbstractResourceInfo,[],null,null]"
+    PROXY_SET = "proxy-set"
+    CONSTRUCTOR_PROXY_MAP = "jaxrs-constructor-proxy-map"
+    FIELD_PROXY_MAP = "jaxrs-field-proxy-map"
+    SETTER_PROXY_MAP = "jaxrs-setter-proxy-map"
+    STANDARD_CONTEXT_CLASSES = class java.util.HashSet@b0ccfbd
+      serialVersionUID = -5024744406713321676
+      map = class java.util.HashMap@7093729c
+      PRESENT = class java.lang.Object@629aa37a
+      MAX_ARRAY_SIZE = 2147483639
+    root = true
+    resourceClass = class java.lang.Class@1458d7f8
+      ANNOTATION = 8192
+      ENUM = 16384
+      SYNTHETIC = 4096
+      cachedConstructor = null
+      newInstanceCallerCache = null
+      name = "colruyt.registration.RegistrationArticle"
+      module = class java.lang.Module@7e884750
+      packageName = "colruyt.registration"
+      componentType = null
+      allPermDomain = class java.security.ProtectionDomain@74106232
+      reflectionData = class java.lang.ref.SoftReference@48428257
+      classRedefinedCount = 0
+      genericInfo = class sun.reflect.generics.repository.ClassRepository@78feaadc
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      serialVersionUID = 3206093459760846163
+      serialPersistentFields = class java.io.ObjectStreamField[0]
+      reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      enumConstants = null
+      enumConstantDirectory = null
+      annotationData = class java.lang.Class$AnnotationData@52983955
+      annotationType = null
+      classValueMap = null
+    serviceClass = class java.lang.Class@1458d7f8
+    contextFields = null
+    contextMethods = null
+    bus = class com.ibm.ws.jaxrs20.bus.LibertyApplicationBus@6ac3ebe0
+      busCounter = class java.util.concurrent.atomic.AtomicInteger@705af2ff
+      serialVersionUID = 2386792285914827878
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@39cd1987
+      BUS_PROPERTY_NAME = "bus"
+      BUS_ID_PROPERTY_NAME = "org.apache.cxf.bus.id"
+      extensions = class java.util.concurrent.ConcurrentHashMap@55efb7f
+      missingExtensions = class java.util.concurrent.CopyOnWriteArraySet@32ebcdb8
+      id = "SolTest-Server-Bus"
+      state = class org.apache.cxf.Bus$BusState@3626ed2b
+      features = class java.util.concurrent.CopyOnWriteArrayList@114c2c1a
+      properties = class java.util.concurrent.ConcurrentHashMap@63bbb84f
+      extensionManager = class org.apache.cxf.bus.extension.ExtensionManagerImpl@fd12f8d
+      in = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@e9fd4e9
+      out = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@7e4305dc
+      outFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@4004a39b
+      inFault = class org.apache.cxf.common.util.ModCountCopyOnWriteArrayList@462f5151
+    constructorProxiesAvailable = false
+    contextsAvailable = false
+    serialVersionUID = 6898748758160355649
+  methodToInvoke = class java.lang.reflect.Method@4eac2ba7
+    clazz = class java.lang.Class@1458d7f8
+    slot = 1
+    name = "getArticles"
+    returnType = class java.lang.Class@7440e464
+      ANNOTATION = 8192
+      ENUM = 16384
+      SYNTHETIC = 4096
+      cachedConstructor = null
+      newInstanceCallerCache = null
+      name = "java.util.List"
+      module = class java.lang.Module@6438a396
+      packageName = "java.util"
+      componentType = null
+      allPermDomain = class java.security.ProtectionDomain@74106232
+      reflectionData = class java.lang.ref.SoftReference@57afbd8a
+      classRedefinedCount = 0
+      genericInfo = class sun.reflect.generics.repository.ClassRepository@7fd2377c
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      serialVersionUID = 3206093459760846163
+      serialPersistentFields = class java.io.ObjectStreamField[0]
+      reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      enumConstants = null
+      enumConstantDirectory = null
+      annotationData = class java.lang.Class$AnnotationData@7ae9081f
+      annotationType = null
+      classValueMap = null
+    parameterTypes = class java.lang.Class[0]
+    exceptionTypes = class java.lang.Class[0]
+    modifiers = 1
+    signature = "()Ljava/util/List<Lcolruyt/registration/Article;>;"
+    genericInfo = class sun.reflect.generics.repository.MethodRepository@4405ed60
+      returnType = class sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl@3bb92c87
+      parameterTypes = interface java.lang.reflect.Type[0]
+      exceptionTypes = null
+      typeParameters = null
+      factory = class sun.reflect.generics.factory.CoreReflectionFactory@16066b1a
+      tree = class sun.reflect.generics.tree.MethodTypeSignature@6fa9df50
+    annotations = {0,2,0,22,0,0,0,23,0,1,0,24,91,0,1,115,0,25} /* array length = 18 */
+    parameterAnnotations = null
+    annotationDefault = null
+    methodAccessor = class jdk.internal.reflect.GeneratedMethodAccessor1309@6e1e23e5
+    root = class java.lang.reflect.Method@1cef9fe3
+      clazz = class java.lang.Class@1458d7f8
+      slot = 1
+      name = "getArticles"
+      returnType = class java.lang.Class@7440e464
+      parameterTypes = class java.lang.Class[0]
+      exceptionTypes = class java.lang.Class[0]
+      modifiers = 1
+      signature = "()Ljava/util/List<Lcolruyt/registration/Article;>;"
+      genericInfo = null
+      annotations = {0,2,0,22,0,0,0,23,0,1,0,24,91,0,1,115,0,25} /* array length = 18 */
+      parameterAnnotations = null
+      annotationDefault = null
+      methodAccessor = class jdk.internal.reflect.GeneratedMethodAccessor1309@6e1e23e5
+      root = null
+      hasRealParameterData = false
+      parameters = null
+      declaredAnnotations = class java.util.LinkedHashMap@21681be1
+      override = false
+      reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      securityCheckCache = null
+      printStackWhenAccessFails = false
+      printStackPropertiesSet = true
+    hasRealParameterData = false
+    parameters = class java.lang.reflect.Parameter[0]
+    declaredAnnotations = class java.util.LinkedHashMap@21681be1
+      serialVersionUID = 3801124242820219131
+      head = class java.util.LinkedHashMap$Entry@55738ff2
+      tail = class java.util.LinkedHashMap$Entry@35031238
+      accessOrder = false
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[16]
+      entrySet = null
+      size = 2
+      modCount = 2
+      threshold = 12
+      loadFactor = 0.75
+      keySet = null
+      values = class java.util.LinkedHashMap$LinkedValues@727c2125
+    override = false
+    reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      Failed to resolve fields for jdk.internal.reflect.ReflectionFactory = "java.lang.reflect.InaccessibleObjectException: Unable to make field private static boolean jdk.internal.reflect.ReflectionFactory.initted accessible: module java.base does not "opens jdk.internal.reflect" to unnamed module @2fd6b6c7
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
+	at java.base/java.lang.reflect.AccessibleObject.setAccessible(AccessibleObject.java:123)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:316)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:310)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getFields(IntrospectionLevelMember.java:310)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.introspectViaReflection(IntrospectionLevelMember.java:199)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getChildren(IntrospectionLevelMember.java:163)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevel.getNextLevel(IntrospectionLevel.java:100)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspect(IncidentStreamImpl.java:437)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWrite(IncidentStreamImpl.java:129)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWriteLine(IncidentStreamImpl.java:164)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:102)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:35)
+	at com.ibm.ws.logging.internal.impl.IncidentImpl.log(IncidentImpl.java:249)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.log(BaseFFDCService.java:239)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.processException(BaseFFDCService.java:216)
+	at com.ibm.ws.ffdc.FFDCFilter.processException(FFDCFilter.java:94)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.serializeMessage(JAXRSOutInterceptor.java:273)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.processResponse(JAXRSOutInterceptor.java:124)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.handleMessage(JAXRSOutInterceptor.java:85)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.interceptor.OutgoingChainInterceptor.handleMessage(OutgoingChainInterceptor.java:90)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:146)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doGet(IBMRestServlet.java:112)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:96)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:743)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:440)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:182)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:56)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:996)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1134)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1005)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:75)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:83)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:927)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1023)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:417)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:376)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:466)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:331)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:501)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:571)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:926)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1015)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+"
+    securityCheckCache = class java.lang.Class@51e817e7
+      ANNOTATION = 8192
+      ENUM = 16384
+      SYNTHETIC = 4096
+      cachedConstructor = null
+      newInstanceCallerCache = null
+      name = "com.ibm.ws.jaxrs20.server.LibertyJaxRsServerFactoryBean"
+      module = class java.lang.Module@6de2a765
+      packageName = "com.ibm.ws.jaxrs20.server"
+      componentType = null
+      allPermDomain = class java.security.ProtectionDomain@74106232
+      reflectionData = null
+      classRedefinedCount = 0
+      genericInfo = null
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      serialVersionUID = 3206093459760846163
+      serialPersistentFields = class java.io.ObjectStreamField[0]
+      reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      enumConstants = null
+      enumConstantDirectory = null
+      annotationData = class java.lang.Class$AnnotationData@6f4e133d
+      annotationType = null
+      classValueMap = null
+    printStackWhenAccessFails = false
+    printStackPropertiesSet = true
+  annotatedMethod = class java.lang.reflect.Method@4eac2ba7
+  httpMethod = "GET"
+  produceMimes = class java.util.ArrayList@45f2f463
+    serialVersionUID = 8683452581122892189
+    DEFAULT_CAPACITY = 10
+    EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    DEFAULTCAPACITY_EMPTY_ELEMENTDATA = class java.lang.Object[0]
+    elementData = class java.lang.Object[1]
+      Object[0] = class javax.ws.rs.core.MediaType@2daa68b7
+    size = 1
+    MAX_ARRAY_SIZE = 2147483639
+    modCount = 1
+    MAX_ARRAY_SIZE = 2147483639
+  consumeMimes = class java.util.Collections$SingletonList@5402921a
+    serialVersionUID = 3093736618740652951
+    element = class javax.ws.rs.core.MediaType@2284d0b7
+      type = "*"
+      subtype = "*"
+      parameters = class java.util.Collections$UnmodifiableMap@7ccfbe89
+      CHARSET_PARAMETER = "charset"
+      MEDIA_TYPE_WILDCARD = "*"
+      WILDCARD = "*/*"
+      WILDCARD_TYPE = class javax.ws.rs.core.MediaType@15dd6c6f
+      APPLICATION_XML = "application/xml"
+      APPLICATION_XML_TYPE = class javax.ws.rs.core.MediaType@5028fba7
+      APPLICATION_ATOM_XML = "application/atom+xml"
+      APPLICATION_ATOM_XML_TYPE = class javax.ws.rs.core.MediaType@4ae7e8e3
+      APPLICATION_XHTML_XML = "application/xhtml+xml"
+      APPLICATION_XHTML_XML_TYPE = class javax.ws.rs.core.MediaType@24c35a40
+      APPLICATION_SVG_XML = "application/svg+xml"
+      APPLICATION_SVG_XML_TYPE = class javax.ws.rs.core.MediaType@27d5f18c
+      APPLICATION_JSON = "application/json"
+      APPLICATION_JSON_TYPE = class javax.ws.rs.core.MediaType@74e029eb
+      APPLICATION_FORM_URLENCODED = "application/x-www-form-urlencoded"
+      APPLICATION_FORM_URLENCODED_TYPE = class javax.ws.rs.core.MediaType@1357764
+      MULTIPART_FORM_DATA = "multipart/form-data"
+      MULTIPART_FORM_DATA_TYPE = class javax.ws.rs.core.MediaType@3f1a3c58
+      APPLICATION_OCTET_STREAM = "application/octet-stream"
+      APPLICATION_OCTET_STREAM_TYPE = class javax.ws.rs.core.MediaType@374bf3a6
+      TEXT_PLAIN = "text/plain"
+      TEXT_PLAIN_TYPE = class javax.ws.rs.core.MediaType@42912bd5
+      TEXT_XML = "text/xml"
+      TEXT_XML_TYPE = class javax.ws.rs.core.MediaType@68b5fab4
+      TEXT_HTML = "text/html"
+      TEXT_HTML_TYPE = class javax.ws.rs.core.MediaType@6a3e306
+      SERVER_SENT_EVENTS = "text/event-stream"
+      SERVER_SENT_EVENTS_TYPE = class javax.ws.rs.core.MediaType@6e1df6b7
+      APPLICATION_JSON_PATCH_JSON = "application/json-patch+json"
+      APPLICATION_JSON_PATCH_JSON_TYPE = class javax.ws.rs.core.MediaType@2519b722
+    modCount = 0
+    MAX_ARRAY_SIZE = 2147483639
+  encoded = false
+  defaultParamValue = null
+  parameters = class java.util.Collections$EmptyList@490b16ea
+    serialVersionUID = 8842843931221139166
+    modCount = 0
+    MAX_ARRAY_SIZE = 2147483639
+  oneway = false
+  async = false
+  nameBindings = class java.util.LinkedHashSet@790a7762
+    serialVersionUID = -2851667679971038690
+    serialVersionUID = -5024744406713321676
+    map = class java.util.LinkedHashMap@4d72da2
+      serialVersionUID = 3801124242820219131
+      head = null
+      tail = null
+      accessOrder = false
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = null
+      entrySet = null
+      size = 0
+      modCount = 0
+      threshold = 16
+      loadFactor = 0.75
+      keySet = null
+      values = null
+    PRESENT = class java.lang.Object@629aa37a
+    MAX_ARRAY_SIZE = 2147483639
+  actualInParamTypes = class java.lang.Class[0]
+  actualInGenericParamTypes = interface java.lang.reflect.Type[0]
+  actualInParamAnnotations = class [Ljava.lang.annotation.Annotation;[0]
+  actualOutParamAnnotations = interface java.lang.annotation.Annotation[2]
+    Annotation[0] = class com.sun.proxy.$Proxy53@749c47ca
+      m1 = class java.lang.reflect.Method@793d86ca
+      m2 = class java.lang.reflect.Method@6f092c30
+      m3 = class java.lang.reflect.Method@4525b31f
+      m0 = class java.lang.reflect.Method@5b07d608
+      serialVersionUID = -2222568056686623797
+      constructorParams = class java.lang.Class[1]
+      proxyCache = class jdk.internal.loader.ClassLoaderValue@77846d2c
+      h = class sun.reflect.annotation.AnnotationInvocationHandler@4e190074
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      PROXY_PACKAGE_PREFIX = "com.sun.proxy"
+    Annotation[1] = class com.sun.proxy.$Proxy54@2ca0c4da
+      m1 = class java.lang.reflect.Method@51d493ce
+      m2 = class java.lang.reflect.Method@44138769
+      m4 = class java.lang.reflect.Method@2e6d86ea
+      m0 = class java.lang.reflect.Method@6bdb9780
+      m3 = class java.lang.reflect.Method@1e6433d6
+      serialVersionUID = -2222568056686623797
+      constructorParams = class java.lang.Class[1]
+      proxyCache = class jdk.internal.loader.ClassLoaderValue@77846d2c
+      h = class sun.reflect.annotation.AnnotationInvocationHandler@35a40652
+      EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+      PROXY_PACKAGE_PREFIX = "com.sun.proxy"
+
+Dump of objectArray[4]
+Object type = java.lang.Boolean
+  TRUE = true
+  FALSE = false
+  TYPE = class java.lang.Class@6477463f
+    ANNOTATION = 8192
+    ENUM = 16384
+    SYNTHETIC = 4096
+    cachedConstructor = null
+    newInstanceCallerCache = null
+    name = "boolean"
+    module = class java.lang.Module@6438a396
+      layer = null
+      name = "java.base"
+      loader = null
+      descriptor = class java.lang.module.ModuleDescriptor@7675143a
+      ALL_UNNAMED_MODULE = class java.lang.Module@4f47d241
+      ALL_UNNAMED_MODULE_SET = class java.util.ImmutableCollections$Set12@73c54806
+      EVERYONE_MODULE = class java.lang.Module@e2144e4
+      EVERYONE_SET = class java.util.ImmutableCollections$Set12@516f19a
+      reads = class java.util.HashSet@2463d07
+      openPackages = class java.util.HashMap@63b70578
+      exportedPackages = class java.util.HashMap@2674beec
+      moduleInfoClass = null
+      $assertionsDisabled = true
+    packageName = null
+    componentType = null
+    allPermDomain = class java.security.ProtectionDomain@74106232
+      filePermCompatInPD = false
+      codesource = null
+      classloader = null
+      principals = interface java.security.Principal[0]
+      permissions = class java.security.Permissions@3dc19b45
+      hasAllPerm = true
+      staticPermissions = true
+      key = class java.security.ProtectionDomain$Key@6ba9ed19
+    reflectionData = class java.lang.ref.SoftReference@1352c02f
+      clock = 112301195
+      timestamp = 112301195
+      referent = class java.lang.Class$ReflectionData@7a105161
+      queue = class java.lang.ref.ReferenceQueue$Null@260ae6b4
+      next = null
+      discovered = null
+      processPendingLock = class java.lang.Object@70b06d10
+      processPendingActive = false
+    classRedefinedCount = 0
+    genericInfo = class sun.reflect.generics.repository.ClassRepository@78feaadc
+      NONE = class sun.reflect.generics.repository.ClassRepository@78feaadc
+      superclass = null
+      superInterfaces = null
+      typeParameters = null
+      factory = null
+      tree = class sun.reflect.generics.tree.ClassSignature@10f5328c
+    EMPTY_CLASS_ARRAY = class java.lang.Class[0]
+    serialVersionUID = 3206093459760846163
+    serialPersistentFields = class java.io.ObjectStreamField[0]
+    reflectionFactory = class jdk.internal.reflect.ReflectionFactory@66cfae0f
+      Failed to resolve fields for jdk.internal.reflect.ReflectionFactory = "java.lang.reflect.InaccessibleObjectException: Unable to make field private static boolean jdk.internal.reflect.ReflectionFactory.initted accessible: module java.base does not "opens jdk.internal.reflect" to unnamed module @2fd6b6c7
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
+	at java.base/java.lang.reflect.AccessibleObject.setAccessible(AccessibleObject.java:123)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:316)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:310)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getFields(IntrospectionLevelMember.java:310)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.introspectViaReflection(IntrospectionLevelMember.java:199)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getChildren(IntrospectionLevelMember.java:163)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevel.getNextLevel(IntrospectionLevel.java:100)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspect(IncidentStreamImpl.java:437)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWrite(IncidentStreamImpl.java:129)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWriteLine(IncidentStreamImpl.java:164)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:102)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:35)
+	at com.ibm.ws.logging.internal.impl.IncidentImpl.log(IncidentImpl.java:249)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.log(BaseFFDCService.java:239)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.processException(BaseFFDCService.java:216)
+	at com.ibm.ws.ffdc.FFDCFilter.processException(FFDCFilter.java:94)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.serializeMessage(JAXRSOutInterceptor.java:273)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.processResponse(JAXRSOutInterceptor.java:124)
+	at org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor.handleMessage(JAXRSOutInterceptor.java:85)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.interceptor.OutgoingChainInterceptor.handleMessage(OutgoingChainInterceptor.java:90)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:124)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:274)
+	at com.ibm.ws.jaxrs20.endpoint.AbstractJaxRsWebEndpoint.invoke(AbstractJaxRsWebEndpoint.java:134)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.handleRequest(IBMRestServlet.java:146)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.doGet(IBMRestServlet.java:112)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:686)
+	at com.ibm.websphere.jaxrs.server.IBMRestServlet.service(IBMRestServlet.java:96)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1255)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:743)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:440)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:182)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:56)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:996)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1134)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1005)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:75)
+	at com.ibm.ws.webcontainer40.servlet.CacheServletWrapper40.handleRequest(CacheServletWrapper40.java:83)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:927)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1023)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:417)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:376)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:466)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:331)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:501)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:571)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:926)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1015)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+"
+    enumConstants = null
+    enumConstantDirectory = null
+    annotationData = class java.lang.Class$AnnotationData@cf52b06
+      annotations = class java.util.Collections$EmptyMap@5b77cf6
+      declaredAnnotations = class java.util.Collections$EmptyMap@5b77cf6
+      redefinedCount = 0
+    annotationType = null
+    classValueMap = class java.lang.ClassValue$ClassValueMap@36e624f1
+      cacheArray = class java.lang.ClassValue$Entry[32]
+      cacheLoad = 1
+      cacheLoadLimit = 21
+      INITIAL_ENTRIES = 32
+      CACHE_LOAD_LIMIT = 67
+      PROBE_LIMIT = 6
+      $assertionsDisabled = true
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      table = class java.util.WeakHashMap$Entry[16]
+      size = 1
+      threshold = 12
+      loadFactor = 0.75
+      queue = class java.lang.ref.ReferenceQueue@4847a06b
+      modCount = 1
+      NULL_KEY = class java.lang.Object@5b44103c
+      entrySet = null
+      keySet = null
+      values = null
+  value = true
+  serialVersionUID = -3665804199014368530
+

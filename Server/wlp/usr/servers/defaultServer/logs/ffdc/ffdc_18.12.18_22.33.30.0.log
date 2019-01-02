@@ -1,0 +1,205 @@
+------Start of DE processing------ = [18/12/18 22:33:30:511 CET]
+Exception = com.ibm.wsspi.adaptable.module.UnableToAdaptException
+Source = com.ibm.ws.app.manager.module.internal.ContextRootUtil
+probeid = 43
+Stack Dump = com.ibm.wsspi.adaptable.module.UnableToAdaptException: com.ibm.ws.javaee.ddmodel.DDParser$ParseException: CWWKC2272E: An error occurred while parsing the /WEB-INF/web.xml deployment descriptor on line 1. The error message was: ParseError at [row,col]:[1,1]
+Message: Premature end of file.
+	at com.ibm.ws.javaee.ddmodel.web.WebAppEntryAdapter.adapt(WebAppEntryAdapter.java:61)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppEntryAdapter.adapt(WebAppEntryAdapter.java:26)
+	at com.ibm.ws.adaptable.module.internal.AdapterFactoryServiceImpl.adapt(AdapterFactoryServiceImpl.java:227)
+	at com.ibm.ws.adaptable.module.internal.AdaptableEntryImpl.adapt(AdaptableEntryImpl.java:121)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppAdapter.adapt(WebAppAdapter.java:38)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppAdapter.adapt(WebAppAdapter.java:24)
+	at com.ibm.ws.adaptable.module.internal.AdapterFactoryServiceImpl.adapt(AdapterFactoryServiceImpl.java:196)
+	at com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl.adapt(AdaptableContainerImpl.java:170)
+	at com.ibm.ws.javaee.ddmodel.webext.WebExtAdapter.adapt(WebExtAdapter.java:50)
+	at com.ibm.ws.javaee.ddmodel.webext.WebExtAdapter.adapt(WebExtAdapter.java:35)
+	at com.ibm.ws.adaptable.module.internal.AdapterFactoryServiceImpl.adapt(AdapterFactoryServiceImpl.java:196)
+	at com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl.adapt(AdaptableContainerImpl.java:170)
+	at com.ibm.ws.app.manager.module.internal.ContextRootUtil.getContextRoot(ContextRootUtil.java:38)
+	at com.ibm.ws.app.manager.war.internal.WARDeployedAppInfo.<init>(WARDeployedAppInfo.java:62)
+	at com.ibm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl.createDeployedAppInfo(WARDeployedAppInfoFactoryImpl.java:118)
+	at com.ibm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl.createDeployedAppInfo(WARDeployedAppInfoFactoryImpl.java:33)
+	at com.ibm.ws.app.manager.war.internal.WARApplicationHandlerImpl.setUpApplicationMonitoring(WARApplicationHandlerImpl.java:49)
+	at com.ibm.ws.app.manager.internal.statemachine.StartAction.execute(StartAction.java:136)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.enterState(ApplicationStateMachineImpl.java:1258)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.performAction(ApplicationStateMachineImpl.java:1138)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.run(ApplicationStateMachineImpl.java:881)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.ibm.ws.javaee.ddmodel.DDParser$ParseException: CWWKC2272E: An error occurred while parsing the /WEB-INF/web.xml deployment descriptor on line 1. The error message was: ParseError at [row,col]:[1,1]
+Message: Premature end of file.
+	at com.ibm.ws.javaee.ddmodel.DDParser.parseToRootElement(DDParser.java:418)
+	at com.ibm.ws.javaee.ddmodel.DDParser.parseRootElement(DDParser.java:572)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppDDParser.parse(WebAppDDParser.java:32)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppEntryAdapter.adapt(WebAppEntryAdapter.java:59)
+	... 24 more
+Caused by: javax.xml.stream.XMLStreamException: ParseError at [row,col]:[1,1]
+Message: Premature end of file.
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLStreamReaderImpl.next(XMLStreamReaderImpl.java:652)
+	at com.ibm.ws.javaee.ddmodel.DDParser.parseToRootElement(DDParser.java:415)
+	... 27 more
+
+Dump of callerThis
+null
+Dump of objectArray[0]
+Object type = com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl
+  root = class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl@4cfe3da1
+  rootOverlay = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayContainerImpl@598b05d5
+    base = class com.ibm.ws.artifact.loose.internal.LooseArchive@4997852b
+      cacheDir = class java.io.File@19224ed6
+      xmlFile = class java.io.File@153ca43c
+      parent = null
+      cfh = class com.ibm.ws.artifact.loose.internal.LooseContainerFactoryHelper@39346578
+      pathInParent = null
+      _entries = class java.util.ArrayList@29653f8e
+      tc = class com.ibm.websphere.ras.TraceComponent@98dd8b5
+      artifactNotifier = null
+      serialVersionUID = 345486831272892625
+    maskSet = class java.util.HashSet@595e202c
+      serialVersionUID = -5024744406713321676
+      map = class java.util.HashMap@56a39281
+      PRESENT = class java.lang.Object@678f3688
+      MAX_ARRAY_SIZE = 2147483639
+    cfHolder = class com.ibm.ws.artifact.overlay.internal.OverlayContainerFactoryImpl@79f7be13
+    fileOverlayContainer = class com.ibm.ws.artifact.file.internal.FileContainer@64701d93
+      containerFactoryHolder = class com.ibm.ws.artifact.file.internal.FileContainerFactory@576ea8d
+      parent = null
+      thisInParent = null
+      dir = class java.io.File@65d40965
+      cacheDir = class java.io.File@109f7629
+      isRoot = true
+      root = class com.ibm.ws.artifact.file.internal.FileContainer@64701d93
+      artifactNotifier = class com.ibm.ws.artifact.file.FileArtifactNotifier@720fd3b5
+      serialVersionUID = -542248409847968651
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@2149ae01
+    overlayDirectory = class java.io.File@65d40965
+      fs = class java.io.UnixFileSystem@1231f830
+      path = "/Users/kurtrogiers/lab/wlp/usr/servers/defaultServer/workarea/org.eclipse.osgi/75/data/cacheAdapt/com.ibm.ws.app.manager_65/.overlay"
+      status = class java.io.File$PathStatus@d8f7223
+      prefixLength = 1
+      separatorChar = /
+      separator = "/"
+      pathSeparatorChar = :
+      pathSeparator = ":"
+      UNSAFE = class jdk.internal.misc.Unsafe@77a26b35
+      PATH_OFFSET = 16
+      PREFIX_LENGTH_OFFSET = 12
+      serialVersionUID = 301077366599181567
+      filePath = null
+      $assertionsDisabled = true
+    cacheDirForOverlay = class java.io.File@109f7629
+      fs = class java.io.UnixFileSystem@1231f830
+      path = "/Users/kurtrogiers/lab/wlp/usr/servers/defaultServer/workarea/org.eclipse.osgi/75/data/cacheOverlay/com.ibm.ws.app.manager_65"
+      status = class java.io.File$PathStatus@d8f7223
+      prefixLength = 1
+      separatorChar = /
+      separator = "/"
+      pathSeparatorChar = :
+      pathSeparator = ":"
+      UNSAFE = class jdk.internal.misc.Unsafe@77a26b35
+      PATH_OFFSET = 16
+      PREFIX_LENGTH_OFFSET = 12
+      serialVersionUID = 301077366599181567
+      filePath = null
+      $assertionsDisabled = true
+    overlayNotifier = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayNotifier@38e86b56
+      root = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayContainerImpl@598b05d5
+      overlayContainer = class com.ibm.ws.artifact.file.internal.FileContainer@64701d93
+      overlaidContainer = class com.ibm.ws.artifact.loose.internal.LooseArchive@4997852b
+      listeningToContainers = false
+      listeners = class java.util.concurrent.ConcurrentHashMap@631897b9
+      pathsMonitored = class java.util.HashSet@684731f2
+      parentNotifier = null
+      pathOfEntryInParent = null
+      id = null
+      serialVersionUID = -5716655730663296309
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@49b6e2ff
+    enclosingContainer = null
+    entryInEnclosingContainer = null
+    nestedOverlays = class java.util.concurrent.ConcurrentHashMap@5c10755d
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = null
+      nextTable = null
+      baseCount = 0
+      sizeCtl = 0
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = null
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@77a26b35
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    cacheStore = class com.ibm.ws.artifact.overlay.internal.OverlayCache@19cac09b
+      cache = class java.util.HashMap@9c6a479
+      serialVersionUID = -7877512378170016077
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7503056f
+    parentOverlay = null
+    isPassThroughMode = true
+    serialVersionUID = -1690795617118238166
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@62d4bc35
+      strings[0] = "TraceComponent[com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayContainerImpl,class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayContainerImpl,[archive.overlay],,null]"
+  factoryHolder = class com.ibm.ws.adaptable.module.internal.AdaptableModuleFactoryImpl@6f2d4d25
+    adapterFactoryService = class com.ibm.ws.adaptable.module.internal.AdapterFactoryServiceImpl@52979da4
+      toType = "toType"
+      priv = class com.ibm.ws.kernel.service.util.SecureAction@11b0a5ca
+      containerHelperMap = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSetMap@26bb6c8
+      entryHelperMap = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSetMap@6a15bffa
+      containerToTypes = class java.util.Collections$SynchronizedSet@1878a8ae
+      entryToTypes = class java.util.Collections$SynchronizedSet@cf2c09e
+      baseProperties = class org.apache.felix.scr.impl.helper.ReadOnlyDictionary@53f0ea3e
+      serialVersionUID = 5945907930609928466
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@76540642
+    containerFactory = class com.ibm.ws.artifact.internal.ArtifactContainerFactoryService@25cced80
+      CATEGORY_PROP_NAME = "category"
+      ENTRY_KEY = "com.ibm.wsspi.artifact.ArtifactEntry"
+      helperMap = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSetMap@1a21e092
+      contributorMap = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSetMap@4acf1e69
+      helperCategoryMap = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSetMap@6820eb3d
+      contributorCategoryMap = class com.ibm.wsspi.kernel.service.utils.ConcurrentServiceReferenceSetMap@742d0988
+      categories = class java.util.Collections$SynchronizedSet@611d42ef
+      baseProperties = class org.apache.felix.scr.impl.helper.ReadOnlyDictionary@531334f3
+      serialVersionUID = -3101641399269402013
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@13403c78
+    overlayContainerFactory = class com.ibm.ws.artifact.overlay.internal.OverlayContainerFactoryImpl@79f7be13
+      containerFactory = class com.ibm.ws.artifact.internal.ArtifactContainerFactoryService@25cced80
+      serialVersionUID = 6296466117843221178
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@7335a4f2
+    serialVersionUID = 4200251809856292987
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@5c8c4fb
+      strings[0] = "TraceComponent[com.ibm.ws.adaptable.module.internal.AdaptableModuleFactoryImpl,class com.ibm.ws.adaptable.module.internal.AdaptableModuleFactoryImpl,[archive.adaptable],,null]"
+  delegate = class com.ibm.ws.artifact.overlay.internal.DirectoryBasedOverlayContainerImpl@598b05d5
+  notifier = null
+  serialVersionUID = -5621513278641113667
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@19d39176
+    strings[0] = "TraceComponent[com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl,class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl,[archive.adaptable],,null]"
+

@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Jan 02 14:54:28 CET 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.3.1 - (1465858): instance a816c00e-0168-0ed8-12b8-00000c7bf3c0 
+on database directory /Users/kurtrogiers/lab/wlp/usr/shared/resources/regData  with class loader com.ibm.ws.classloading.internal.AppClassLoader@2fb6e8e5 
+Loaded from file:/Users/kurtrogiers/lab/wlp/usr/shared/resources/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.1+13-LTS
+user.dir=/Users/kurtrogiers/lab/wlp/usr/servers/defaultServer
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.14.2
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

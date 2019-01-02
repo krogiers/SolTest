@@ -1,0 +1,9 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      4    2/01/19 01:42:47:960 CET    2/01/19 01:43:35:282 CET javax.json.bind.JsonbException org.apache.cxf.jaxrs.interceptor.JAXRSOutInterceptor 273
+                                                                            - /Users/kurtrogiers/lab/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_19.01.02_01.42.47.0.log
+                                                                            - /Users/kurtrogiers/lab/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_19.01.02_01.42.57.0.log
+                                                                            - /Users/kurtrogiers/lab/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_19.01.02_01.43.32.0.log
+                                                                            - /Users/kurtrogiers/lab/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_19.01.02_01.43.35.0.log
+------+------+---------------------------+---------------------------+---------------------------

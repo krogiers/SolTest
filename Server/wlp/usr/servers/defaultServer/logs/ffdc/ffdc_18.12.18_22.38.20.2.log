@@ -1,0 +1,700 @@
+------Start of DE processing------ = [18/12/18 22:38:20:341 CET]
+Exception = java.lang.IllegalStateException
+Source = com.ibm.ws.app.manager.internal.statemachine.StartAction
+probeid = 145
+Stack Dump = java.lang.IllegalStateException: com.ibm.wsspi.adaptable.module.UnableToAdaptException: com.ibm.ws.javaee.ddmodel.DDParser$ParseException: CWWKC2272E: An error occurred while parsing the /WEB-INF/web.xml deployment descriptor on line 8. The error message was: ParseError at [row,col]:[8,174]
+Message: http://www.w3.org/TR/1999/REC-xml-names-19990114#AttributePrefixUnbound?web-app&xsi:schemaLocation&xsi
+	at com.ibm.ws.app.manager.war.internal.WARApplicationHandlerImpl.setUpApplicationMonitoring(WARApplicationHandlerImpl.java:51)
+	at com.ibm.ws.app.manager.internal.statemachine.StartAction.execute(StartAction.java:136)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.enterState(ApplicationStateMachineImpl.java:1258)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.performAction(ApplicationStateMachineImpl.java:1138)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.run(ApplicationStateMachineImpl.java:881)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.ibm.wsspi.adaptable.module.UnableToAdaptException: com.ibm.ws.javaee.ddmodel.DDParser$ParseException: CWWKC2272E: An error occurred while parsing the /WEB-INF/web.xml deployment descriptor on line 8. The error message was: ParseError at [row,col]:[8,174]
+Message: http://www.w3.org/TR/1999/REC-xml-names-19990114#AttributePrefixUnbound?web-app&xsi:schemaLocation&xsi
+	at com.ibm.ws.javaee.ddmodel.web.WebAppEntryAdapter.adapt(WebAppEntryAdapter.java:61)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppEntryAdapter.adapt(WebAppEntryAdapter.java:26)
+	at com.ibm.ws.adaptable.module.internal.AdapterFactoryServiceImpl.adapt(AdapterFactoryServiceImpl.java:227)
+	at com.ibm.ws.adaptable.module.internal.AdaptableEntryImpl.adapt(AdaptableEntryImpl.java:121)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppAdapter.adapt(WebAppAdapter.java:38)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppAdapter.adapt(WebAppAdapter.java:24)
+	at com.ibm.ws.adaptable.module.internal.AdapterFactoryServiceImpl.adapt(AdapterFactoryServiceImpl.java:196)
+	at com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl.adapt(AdaptableContainerImpl.java:170)
+	at com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase$ModuleContainerInfoBase.<init>(SimpleDeployedAppInfoBase.java:153)
+	at com.ibm.ws.app.manager.module.internal.SimpleDeployedAppInfoBase$WebModuleContainerInfo.<init>(SimpleDeployedAppInfoBase.java:320)
+	at com.ibm.ws.app.manager.war.internal.WARDeployedAppInfo.<init>(WARDeployedAppInfo.java:64)
+	at com.ibm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl.createDeployedAppInfo(WARDeployedAppInfoFactoryImpl.java:118)
+	at com.ibm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl.createDeployedAppInfo(WARDeployedAppInfoFactoryImpl.java:33)
+	at com.ibm.ws.app.manager.war.internal.WARApplicationHandlerImpl.setUpApplicationMonitoring(WARApplicationHandlerImpl.java:49)
+	... 8 more
+Caused by: com.ibm.ws.javaee.ddmodel.DDParser$ParseException: CWWKC2272E: An error occurred while parsing the /WEB-INF/web.xml deployment descriptor on line 8. The error message was: ParseError at [row,col]:[8,174]
+Message: http://www.w3.org/TR/1999/REC-xml-names-19990114#AttributePrefixUnbound?web-app&xsi:schemaLocation&xsi
+	at com.ibm.ws.javaee.ddmodel.DDParser.parseToRootElement(DDParser.java:418)
+	at com.ibm.ws.javaee.ddmodel.DDParser.parseRootElement(DDParser.java:572)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppDDParser.parse(WebAppDDParser.java:32)
+	at com.ibm.ws.javaee.ddmodel.web.WebAppEntryAdapter.adapt(WebAppEntryAdapter.java:59)
+	... 21 more
+Caused by: javax.xml.stream.XMLStreamException: ParseError at [row,col]:[8,174]
+Message: http://www.w3.org/TR/1999/REC-xml-names-19990114#AttributePrefixUnbound?web-app&xsi:schemaLocation&xsi
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLStreamReaderImpl.next(XMLStreamReaderImpl.java:652)
+	at com.ibm.ws.javaee.ddmodel.DDParser.parseToRootElement(DDParser.java:415)
+	... 24 more
+
+Dump of callerThis
+Object type = com.ibm.ws.app.manager.internal.statemachine.StartAction
+  _tc = class com.ibm.websphere.ras.TraceComponent@26fcb58d
+    strings[0] = "TraceComponent[com.ibm.ws.app.manager.internal.statemachine.StartAction,class com.ibm.ws.app.manager.internal.statemachine.StartAction,[applications, app.manager],com.ibm.ws.app.manager.internal.resources.AppManagerMessages,null]"
+  _config = class com.ibm.ws.app.manager.internal.ApplicationConfig@45ec348e
+    tc = class com.ibm.websphere.ras.TraceComponent@7f7bf81d
+      strings[0] = "TraceComponent[com.ibm.ws.app.manager.internal.ApplicationConfig,class com.ibm.ws.app.manager.internal.ApplicationConfig,[applications, app.manager],com.ibm.ws.app.manager.internal.resources.AppManagerMessages,null]"
+    _configPid = "com.ibm.ws.app.manager_65"
+    _config = class com.ibm.ws.config.admin.ConfigurationDictionary@20996e92
+      serialVersionUID = 7966152868712543805
+      simpleTypes = class java.util.Arrays$ArrayList@1cc53f11
+      primitiveArrayTypes = class java.util.Arrays$ArrayList@1ef4bf1
+      simpleArrayTypes = class java.util.Arrays$ArrayList@5eb799a8
+      extendedTypes = class java.util.Arrays$ArrayList@ce28478
+      CASE_INSENSITIVE = class com.ibm.ws.config.admin.ConfigurationDictionary$CaseInsensitive@57899b5f
+      properties = class java.util.Collections$SynchronizedMap@39ea0f42
+    _applicationManager = class com.ibm.ws.app.manager.ApplicationManager@1a97b558
+      expandApps = true
+      useJandex = false
+      startTimeout = 30
+      stopTimeout = 30
+      serialVersionUID = -5714171545272003139
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@53a98b21
+    _location = "RegistrationAppWeb.war"
+    _type = "war"
+    _name = "RegistrationAppWeb"
+    _notificationBroadcasterSupport = class javax.management.NotificationBroadcasterSupport@187814c4
+      listenerList = class java.util.concurrent.CopyOnWriteArrayList@6de2916c
+      executor = class com.ibm.ws.threading.internal.ExecutorServiceImpl@12f9f40f
+      notifInfo = class javax.management.MBeanNotificationInfo[2]
+      defaultExecutor = class javax.management.NotificationBroadcasterSupport$1@289b1294
+      NO_NOTIFICATION_INFO = class javax.management.MBeanNotificationInfo[0]
+      logger = class com.sun.jmx.remote.util.ClassLogger@623ed8e0
+    ONE_TIME_JANDEX_MSGS_DISPLAYED = true
+  _aii = class com.ibm.ws.app.manager.internal.ApplicationInstallInfo@7b89cec1
+    _config = class com.ibm.ws.app.manager.internal.ApplicationConfig@45ec348e
+    _handlerInfo = class java.util.concurrent.atomic.AtomicReference@5bf5f184
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@553a445d
+      value = null
+    _container = class java.util.concurrent.atomic.AtomicReference@43c884f4
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@553a445d
+      value = class com.ibm.ws.adaptable.module.internal.AdaptableContainerImpl@1468465a
+    _resolvedLocation = class java.util.concurrent.atomic.AtomicReference@1c22502d
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@553a445d
+      value = class com.ibm.ws.kernel.service.location.internal.LocalFileResource@5d65d7d6
+    _handler = class com.ibm.ws.app.manager.war.internal.WARApplicationHandlerImpl@592dd856
+      futureMonitor = class com.ibm.ws.threading.internal.FutureMonitorImpl@6d68948c
+      deployedAppFactory = class com.ibm.ws.app.manager.war.internal.WARDeployedAppInfoFactoryImpl@1c90c792
+      serialVersionUID = 4622845147410944782
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@bfecb5
+    _ami = class java.util.concurrent.atomic.AtomicReference@29686aae
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@553a445d
+      value = null
+    _updateHandler = class com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl@115e81ae
+      _tc = class com.ibm.websphere.ras.TraceComponent@4aa9dd53
+      EMPTY_FUTURE_ARRAY = interface java.util.concurrent.Future[0]
+      asmSequenceNumber = class java.util.concurrent.atomic.AtomicLong@6a41a793
+      _qscaCounter = class java.util.concurrent.atomic.AtomicInteger@77764e1a
+      _failedThrowable = class com.ibm.ws.container.service.state.StateChangeException@5cdf4f57
+      _interruptibleLock = class com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl$2@3988c967
+      _interruptible = false
+      _performingQueuedActions = true
+      _queuedActions = class java.util.concurrent.ConcurrentLinkedQueue@2867c55c
+      _callbackState = class java.util.concurrent.atomic.AtomicReference@4f7d82fc
+      blockAppStartingFutures = class java.util.Collections$SetFromMap@a3e1397
+      waitingForAppHandlerFuture = class java.util.concurrent.atomic.AtomicReference@75822046
+      waitingForExplicitStartFuture = class java.util.concurrent.atomic.AtomicReference@63d9468f
+      completionListener = class java.util.concurrent.atomic.AtomicReference@4010426a
+      _notifyAppStopped = class java.util.concurrent.ConcurrentLinkedQueue@3a485354
+      _notifyAppStarting = class java.util.concurrent.ConcurrentLinkedQueue@5eacc44b
+      _notifyAppInstallCalled = class java.util.concurrent.ConcurrentLinkedQueue@77e81c2f
+      _notifyAppStarted = class java.util.concurrent.ConcurrentLinkedQueue@35a913aa
+      _notifyAppRemoved = class java.util.concurrent.ConcurrentLinkedQueue@4d0324b8
+      _stateLock = class com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl$3@75b52fcf
+      _internalState = class java.util.concurrent.atomic.AtomicReference@420b5c32
+      _currentAction = class java.util.concurrent.atomic.AtomicReference@3fc2239a
+      _rfa = class java.util.concurrent.atomic.AtomicReference@6b30f63e
+      _appInstallInfo = class java.util.concurrent.atomic.AtomicReference@37a767c0
+      _update = class java.util.concurrent.atomic.AtomicBoolean@2f5547ca
+      _appConfig = class java.util.concurrent.atomic.AtomicReference@1256f49
+      _nextAppConfig = class java.util.concurrent.atomic.AtomicReference@6d48f855
+      _appContainer = class java.util.concurrent.atomic.AtomicReference@61dd0b5b
+      _resolvedLocation = class java.util.concurrent.atomic.AtomicReference@64337bbd
+      _handler = class java.util.concurrent.atomic.AtomicReference@4ec61f55
+      _asmSeqNo = 0
+      _ctx = class org.eclipse.osgi.internal.framework.BundleContextImpl@5db2b2d0
+      _locAdmin = class com.ibm.ws.kernel.service.location.internal.WsLocationAdminImpl@6466cc88
+      _futureMonitor = class com.ibm.ws.threading.internal.FutureMonitorImpl@6d68948c
+      _artifactFactory = class com.ibm.ws.artifact.internal.ArtifactContainerFactoryService@6c1e368f
+      _moduleFactory = class com.ibm.ws.adaptable.module.internal.AdaptableModuleFactoryImpl@27af88c1
+      _executorService = class com.ibm.ws.threading.internal.ExecutorServiceImpl@12f9f40f
+      _scheduledExecutorService = class com.ibm.ws.threading.internal.ScheduledExecutorImpl@6cbb6db2
+      _asmHelper = class com.ibm.ws.app.manager.internal.ApplicationConfigurator$NamedApplication@7bc4c04c
+      _appMonitor = class com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor@3eebfe21
+      enterStateCalled = class java.util.concurrent.atomic.AtomicBoolean@178ed184
+      serialVersionUID = -1399093980790866556
+      serialVersionUID = 5501066335104962649
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@528efffc
+    serialVersionUID = 2630639237123415755
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@76af00d5
+      strings[0] = "TraceComponent[com.ibm.ws.app.manager.internal.ApplicationInstallInfo,class com.ibm.ws.app.manager.internal.ApplicationInstallInfo,[applications, app.manager],com.ibm.ws.app.manager.internal.resources.AppManagerMessages,null]"
+  _callback = class java.util.concurrent.atomic.AtomicReference@1bcf27a8
+    serialVersionUID = -1848883965231344442
+    VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@553a445d
+      FORM = class java.lang.invoke.VarForm@3a1f81b9
+      fieldOffset = 12
+      receiverType = class java.lang.Class@4eb7f003
+      fieldType = class java.lang.Class@55054057
+      FORM = class java.lang.invoke.VarForm@22de3381
+      vform = class java.lang.invoke.VarForm@3a1f81b9
+      typesAndInvokers = null
+      AIOOBE_SUPPLIER = class jdk.internal.util.Preconditions$1@1c0f8693
+      VFORM_OFFSET = 12
+      $assertionsDisabled = true
+    value = class com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl$StartActionCallback@1d83acd2
+      immediateCallbackResult = class java.util.concurrent.atomic.AtomicReference@46619fd8
+      this$0 = class com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl@115e81ae
+      serialVersionUID = 6735534421474643855
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@6b03bb2d
+  _monitor = class com.ibm.ws.threading.internal.FutureMonitorImpl@6d68948c
+    _monitor = class java.util.concurrent.ConcurrentLinkedQueue@68bcb2d2
+      serialVersionUID = 196745693267521676
+      head = class java.util.concurrent.ConcurrentLinkedQueue$Node@52834ed0
+      tail = class java.util.concurrent.ConcurrentLinkedQueue$Node@52834ed0
+      MAX_HOPS = 8
+      HEAD = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@369a2569
+      TAIL = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@2ec392f6
+      ITEM = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@51ef5b87
+      NEXT = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@617d4dc7
+      MAX_ARRAY_SIZE = 2147483639
+    _executor = class com.ibm.ws.threading.internal.ScheduledExecutorImpl@6cbb6db2
+      threadGroupName = "Scheduled Executor Thread Group"
+      executor = class com.ibm.ws.threading.internal.ExecutorServiceImpl@12f9f40f
+      serialVersionUID = -9110693807503469597
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@51c991c7
+      continueExistingPeriodicTasksAfterShutdown = false
+      executeExistingDelayedTasksAfterShutdown = true
+      removeOnCancel = false
+      sequencer = class java.util.concurrent.atomic.AtomicLong@4661d2be
+      DEFAULT_KEEPALIVE_MILLIS = 10
+      ctl = class java.util.concurrent.atomic.AtomicInteger@483162eb
+      COUNT_BITS = 29
+      COUNT_MASK = 536870911
+      RUNNING = -536870912
+      SHUTDOWN = 0
+      STOP = 536870912
+      TIDYING = 1073741824
+      TERMINATED = 1610612736
+      workQueue = class java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue@7c36967b
+      mainLock = class java.util.concurrent.locks.ReentrantLock@44403b75
+      workers = class java.util.HashSet@c7ce561
+      termination = class java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4f19e83f
+      largestPoolSize = 1
+      completedTaskCount = 0
+      threadFactory = class com.ibm.ws.threading.internal.ThreadFactoryImpl@420a22f5
+      handler = class java.util.concurrent.ThreadPoolExecutor$AbortPolicy@29368038
+      keepAliveTime = 10000000
+      allowCoreThreadTimeOut = false
+      corePoolSize = 1
+      maximumPoolSize = 2147483647
+      defaultHandler = class java.util.concurrent.ThreadPoolExecutor$AbortPolicy@29368038
+      shutdownPerm = class java.lang.RuntimePermission@296edd31
+      ONLY_ONE = true
+      $assertionsDisabled = true
+    _threadRunning = class java.util.concurrent.atomic.AtomicBoolean@591ac410
+      serialVersionUID = 4654671469794556979
+      VALUE = class java.lang.invoke.VarHandleInts$FieldInstanceReadWrite@f4bb987
+      value = 0
+    _thread = class com.ibm.ws.threading.internal.FutureMonitorImpl$1@7aeb24cc
+      this$0 = class com.ibm.ws.threading.internal.FutureMonitorImpl@6d68948c
+      serialVersionUID = 2422512430832938099
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@1f2e4403
+    serialVersionUID = 2765238413969174390
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@298b110c
+      strings[0] = "TraceComponent[com.ibm.ws.threading.internal.FutureMonitorImpl,class com.ibm.ws.threading.internal.FutureMonitorImpl,[Threading],com.ibm.ws.threading.internal.resources.ThreadingMessages,null]"
+  _startTime = class java.util.concurrent.atomic.AtomicLong@4833d781
+    serialVersionUID = 1927816293512124184
+    VM_SUPPORTS_LONG_CAS = true
+    U = class jdk.internal.misc.Unsafe@52206daa
+      Failed to resolve fields for jdk.internal.misc.Unsafe = "java.lang.reflect.InaccessibleObjectException: Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.Unsafe.theUnsafe accessible: module java.base does not "opens jdk.internal.misc" to unnamed module @448ff1a8
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
+	at java.base/java.lang.reflect.AccessibleObject.setAccessible(AccessibleObject.java:123)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:316)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:310)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getFields(IntrospectionLevelMember.java:310)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.introspectViaReflection(IntrospectionLevelMember.java:199)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getChildren(IntrospectionLevelMember.java:163)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevel.getNextLevel(IntrospectionLevel.java:100)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspect(IncidentStreamImpl.java:437)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWrite(IncidentStreamImpl.java:129)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWriteLine(IncidentStreamImpl.java:164)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:97)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:35)
+	at com.ibm.ws.logging.internal.impl.IncidentImpl.log(IncidentImpl.java:249)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.log(BaseFFDCService.java:239)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.processException(BaseFFDCService.java:216)
+	at com.ibm.ws.ffdc.FFDCFilter.processException(FFDCFilter.java:94)
+	at com.ibm.ws.app.manager.internal.statemachine.StartAction.execute(StartAction.java:145)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.enterState(ApplicationStateMachineImpl.java:1258)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.performAction(ApplicationStateMachineImpl.java:1138)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.run(ApplicationStateMachineImpl.java:881)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+"
+    VALUE = 16
+    value = 1545169100295
+    serialVersionUID = -8742448824652078965
+  _appMonitor = class com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor@3eebfe21
+    tc = class com.ibm.websphere.ras.TraceComponent@448e3a2c
+      strings[0] = "TraceComponent[com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor,class com.ibm.ws.app.manager.internal.monitor.ApplicationMonitor,[applications, app.manager],com.ibm.ws.app.manager.internal.resources.AppManagerMessages,null]"
+    _config = class java.util.concurrent.atomic.AtomicReference@14d13207
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@553a445d
+      value = class com.ibm.ws.app.manager.internal.monitor.ApplicationMonitorConfig@3de8d841
+    _executorService = class java.util.concurrent.atomic.AtomicReference@240ae1c0
+      serialVersionUID = -1848883965231344442
+      VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@553a445d
+      value = class com.ibm.ws.threading.internal.ScheduledExecutorImpl@6cbb6db2
+    _appListeners = class java.util.concurrent.ConcurrentHashMap@4fc1eaa0
+      serialVersionUID = 7249069246763182397
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_CAPACITY = 16
+      MAX_ARRAY_SIZE = 2147483639
+      DEFAULT_CONCURRENCY_LEVEL = 16
+      LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      MIN_TRANSFER_STRIDE = 16
+      RESIZE_STAMP_BITS = 16
+      MAX_RESIZERS = 65535
+      RESIZE_STAMP_SHIFT = 16
+      MOVED = -1
+      TREEBIN = -2
+      RESERVED = -3
+      HASH_BITS = 2147483647
+      NCPU = 12
+      serialPersistentFields = class java.io.ObjectStreamField[3]
+      table = class java.util.concurrent.ConcurrentHashMap$Node[16]
+      nextTable = null
+      baseCount = 1
+      sizeCtl = 12
+      transferIndex = 0
+      cellsBusy = 0
+      counterCells = null
+      keySet = null
+      values = class java.util.concurrent.ConcurrentHashMap$ValuesView@13fee607
+      entrySet = null
+      U = class jdk.internal.misc.Unsafe@52206daa
+      SIZECTL = 20
+      TRANSFERINDEX = 32
+      BASECOUNT = 24
+      CELLSBUSY = 36
+      CELLVALUE = 144
+      ABASE = 16
+      ASHIFT = 2
+      keySet = null
+      values = null
+    serialVersionUID = -6677716415972806660
+  _update = true
+  _slowMessageAction = class java.util.concurrent.atomic.AtomicReference@718028bd
+    serialVersionUID = -1848883965231344442
+    VALUE = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@553a445d
+    value = class com.ibm.ws.threading.internal.SchedulingHelper@997e5a6
+      m_callable = class java.util.concurrent.Executors$RunnableAdapter@46845efa
+      m_isDone = false
+      m_cancelResult = false
+      m_schedFuture = class java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@70082959
+      m_coordinationLatch = class java.util.concurrent.CountDownLatch@4304a6fa
+      m_executor = class com.ibm.ws.threading.internal.ExecutorServiceImpl@12f9f40f
+      m_defaultFuture = null
+      m_pendingException = null
+      m_scheduledExecutorQueue = class java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue@7c36967b
+      serialVersionUID = 2955063284661034074
+      $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@270994d
+  _listener = class com.ibm.ws.app.manager.internal.statemachine.StartAction$1@15aa3654
+    this$0 = class com.ibm.ws.app.manager.internal.statemachine.StartAction@4ddf01b1
+    serialVersionUID = 276196939532533882
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@5ae0ce1e
+      strings[0] = "TraceComponent[com.ibm.ws.app.manager.internal.statemachine.StartAction$1,class com.ibm.ws.app.manager.internal.statemachine.StartAction$1,[applications, app.manager],com.ibm.ws.app.manager.internal.resources.AppManagerMessages,null]"
+  serialVersionUID = 673965255474898916
+
+Dump of objectArray[0]
+Object type = com.ibm.ws.threading.internal.ScheduledExecutorImpl
+  threadGroupName = "Scheduled Executor Thread Group"
+  executor = class com.ibm.ws.threading.internal.ExecutorServiceImpl@12f9f40f
+    threadPool = class java.util.concurrent.ThreadPoolExecutor@4fe5618b
+      ctl = class java.util.concurrent.atomic.AtomicInteger@77bab12e
+      COUNT_BITS = 29
+      COUNT_MASK = 536870911
+      RUNNING = -536870912
+      SHUTDOWN = 0
+      STOP = 536870912
+      TIDYING = 1073741824
+      TERMINATED = 1610612736
+      workQueue = class com.ibm.ws.threading.internal.BoundedBuffer@21e3ef87
+      mainLock = class java.util.concurrent.locks.ReentrantLock@5156fec6
+      workers = class java.util.HashSet@158a6a2e
+      termination = class java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@371b9a70
+      largestPoolSize = 36
+      completedTaskCount = 612
+      threadFactory = class com.ibm.ws.threading.internal.ThreadFactoryImpl@93ac4c3
+      handler = class com.ibm.ws.threading.internal.ExecutorServiceImpl$ExpandPolicy@6ffcabec
+      keepAliveTime = 60000000000
+      allowCoreThreadTimeOut = false
+      corePoolSize = 24
+      maximumPoolSize = 24
+      defaultHandler = class java.util.concurrent.ThreadPoolExecutor$AbortPolicy@29368038
+      shutdownPerm = class java.lang.RuntimePermission@296edd31
+      ONLY_ONE = true
+      $assertionsDisabled = true
+    threadPoolController = class com.ibm.ws.threading.internal.ThreadPoolController@2d29356b
+      tc = class com.ibm.websphere.ras.TraceComponent@3d6821f2
+      interval = 1500
+      hangInterval = 250
+      hangResolutionCountdown = 0
+      hangResolutionCycles = 3
+      hangBufferPoolSize = 0
+      controllerCyclesWithoutHang = 0
+      noHangCyclesThreshold = 8
+      compareRange = 4
+      NUMBER_CPUS = 12
+      controllerCycle = 74
+      distributionReset = false
+      poolIncrement = 12
+      poolDecrement = 12
+      maxThreadsPoolDecrement = 1
+      poolChangeBasis = 12
+      poolIncrementBoundLow = 192
+      poolIncrementBoundMedium = 768
+      poolIncrementMax = 48
+      poolIncrementMin = 1
+      POOL_INCREMENT_MIN_DEFAULT = 1
+      POOL_INCREMENT_MAX_DEFAULT = 48
+      minimumDesiredPoolSizeAdjustments = 10
+      targetPoolSize = 24
+      consecutiveTargetPoolSizeWrong = 0
+      MAX_CONSECUTIVE_TARGET_POOLSIZE_WRONG = 3
+      highCpu = 90
+      lowTputThreadsRatio = 1.0
+      dataAgePruneLevel = 5.0
+      compareSpanPruneMultiplier = 2
+      tputRatioPruneLevel = 5.0
+      poolTputRatioHigh = 5.0
+      poolTputRatioLow = 3.0
+      compareSpanRatioMultiplier = 2
+      growScoreFilterLevel = 0.5
+      shrinkScoreFilterLevel = 0.5
+      growShrinkDiffFilter = 0.25
+      resetDistroStdDevEwmaRatio = 0.1
+      resetDistroNewTputEwmaRatio = 0.5
+      resetDistroConsecutiveOutliers = 5.0
+      processCpuUtil = 0.036098156784365974
+      systemCpuUtil = 4.613674263479711
+      cpuUtil = 4.613674263479711
+      MAX_INTERVALS_WITHOUT_CHANGE = 5
+      EMPTY_QUEUE_SHRINK_MAGIC_PER_INTERVAL = 0.04
+      IDLE_INTERVALS_BEFORE_PAUSE = 3
+      MAX_OUTLIER_AFTER_CHANGE_BEFORE_RESET = 10
+      MAX_THREADS_TO_BREAK_HANG = 1536
+      executorService = class com.ibm.ws.threading.internal.ExecutorServiceImpl@12f9f40f
+      lastAction = class com.ibm.ws.threading.internal.ThreadPoolController$LastAction@303a7fd4
+      timer = class java.util.Timer@c4fa3b0
+      activeTask = class com.ibm.ws.threading.internal.IntervalTask@6761e3e7
+      paused = false
+      lastTimerPop = 1545169099096
+      previousCompleted = 1846
+      previousThroughput = 13.333333333333334
+      consecutiveQueueEmptyCount = 47
+      consecutiveNoAdjustment = 2
+      consecutiveOutlierAfterAdjustment = 0
+      consecutiveIdleCount = 0
+      maxThreads = 2147483647
+      coreThreads = 24
+      threadRange = 2147483623
+      threadPool = class java.util.concurrent.ThreadPoolExecutor@4fe5618b
+      threadStats = class java.util.TreeMap@69ec2aaa
+      poolSizeWhenHangDetected = -1
+      hangIntervalCounter = 0
+      hangMaxThreadsMessageEmitted = false
+      serialVersionUID = 6509656087705674651
+    poolName = "Default Executor"
+    componentConfig = class org.apache.felix.scr.impl.helper.ReadOnlyDictionary@4e950f26
+      m_delegate = class java.util.Hashtable@3539796c
+      m_serviceReference = null
+    interceptorsActive = false
+    interceptors = class java.util.concurrent.CopyOnWriteArraySet@1be5003e
+      serialVersionUID = 5457747651344034263
+      al = class java.util.concurrent.CopyOnWriteArrayList@35d6838c
+      MAX_ARRAY_SIZE = 2147483639
+    threadFactory = null
+    serverStopping = false
+    phaser = class java.util.concurrent.Phaser@7fe8d3f0
+      state = 131074
+      MAX_PARTIES = 65535
+      MAX_PHASE = 2147483647
+      PARTIES_SHIFT = 16
+      PHASE_SHIFT = 32
+      UNARRIVED_MASK = 65535
+      PARTIES_MASK = 4294901760
+      COUNTS_MASK = 4294967295
+      TERMINATION_BIT = -9223372036854775808
+      ONE_ARRIVAL = 1
+      ONE_PARTY = 65536
+      ONE_DEREGISTER = 65537
+      EMPTY = 1
+      parent = null
+      root = class java.util.concurrent.Phaser@7fe8d3f0
+      evenQ = class java.util.concurrent.atomic.AtomicReference@1924c612
+      oddQ = class java.util.concurrent.atomic.AtomicReference@391504ab
+      NCPU = 12
+      SPINS_PER_ARRIVAL = 256
+      STATE = class java.lang.invoke.VarHandleLongs$FieldInstanceReadWrite@1aa1e238
+    serialVersionUID = 2662528932208584803
+    $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@76ab909b
+      strings[0] = "TraceComponent[com.ibm.ws.threading.internal.ExecutorServiceImpl,class com.ibm.ws.threading.internal.ExecutorServiceImpl,[Threading],com.ibm.ws.threading.internal.resources.ThreadingMessages,null]"
+  serialVersionUID = -9110693807503469597
+  $$$tc$$$ = class com.ibm.websphere.ras.TraceComponent@51c991c7
+    strings[0] = "TraceComponent[com.ibm.ws.threading.internal.ScheduledExecutorImpl,class com.ibm.ws.threading.internal.ScheduledExecutorImpl,[Threading],com.ibm.ws.threading.internal.resources.ThreadingMessages,null]"
+  continueExistingPeriodicTasksAfterShutdown = false
+  executeExistingDelayedTasksAfterShutdown = true
+  removeOnCancel = false
+  sequencer = class java.util.concurrent.atomic.AtomicLong@4661d2be
+    serialVersionUID = 1927816293512124184
+    VM_SUPPORTS_LONG_CAS = true
+    U = class jdk.internal.misc.Unsafe@52206daa
+    VALUE = 16
+    value = 1528
+    serialVersionUID = -8742448824652078965
+  DEFAULT_KEEPALIVE_MILLIS = 10
+  ctl = class java.util.concurrent.atomic.AtomicInteger@483162eb
+    serialVersionUID = 6214790243416807050
+    U = class jdk.internal.misc.Unsafe@52206daa
+      Failed to resolve fields for jdk.internal.misc.Unsafe = "java.lang.reflect.InaccessibleObjectException: Unable to make field private static final jdk.internal.misc.Unsafe jdk.internal.misc.Unsafe.theUnsafe accessible: module java.base does not "opens jdk.internal.misc" to unnamed module @448ff1a8
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:176)
+	at java.base/java.lang.reflect.AccessibleObject.setAccessible(AccessibleObject.java:123)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:316)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember$2.run(IntrospectionLevelMember.java:310)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getFields(IntrospectionLevelMember.java:310)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.introspectViaReflection(IntrospectionLevelMember.java:199)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevelMember.getChildren(IntrospectionLevelMember.java:163)
+	at com.ibm.ws.logging.internal.impl.IntrospectionLevel.getNextLevel(IntrospectionLevel.java:100)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspect(IncidentStreamImpl.java:437)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWrite(IncidentStreamImpl.java:129)
+	at com.ibm.ws.logging.internal.impl.IncidentStreamImpl.introspectAndWriteLine(IncidentStreamImpl.java:164)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:102)
+	at com.ibm.ws.logging.internal.impl.IncidentLogger.logIncident(IncidentLogger.java:35)
+	at com.ibm.ws.logging.internal.impl.IncidentImpl.log(IncidentImpl.java:249)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.log(BaseFFDCService.java:239)
+	at com.ibm.ws.logging.internal.impl.BaseFFDCService.processException(BaseFFDCService.java:216)
+	at com.ibm.ws.ffdc.FFDCFilter.processException(FFDCFilter.java:94)
+	at com.ibm.ws.app.manager.internal.statemachine.StartAction.execute(StartAction.java:145)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.enterState(ApplicationStateMachineImpl.java:1258)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.performAction(ApplicationStateMachineImpl.java:1138)
+	at com.ibm.ws.app.manager.internal.statemachine.ApplicationStateMachineImpl.run(ApplicationStateMachineImpl.java:881)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:232)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+"
+    VALUE = 12
+    value = -536870911
+    serialVersionUID = -8742448824652078965
+  COUNT_BITS = 29
+  COUNT_MASK = 536870911
+  RUNNING = -536870912
+  SHUTDOWN = 0
+  STOP = 536870912
+  TIDYING = 1073741824
+  TERMINATED = 1610612736
+  workQueue = class java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue@7c36967b
+    INITIAL_CAPACITY = 16
+    queue = interface java.util.concurrent.RunnableScheduledFuture[16]
+      RunnableScheduledFuture[0] = class com.ibm.ws.threading.internal.SchedulingHelper@31ba5306
+      RunnableScheduledFuture[1] = class com.ibm.ws.threading.internal.SchedulingHelper@5de61b7e
+      RunnableScheduledFuture[2] = class com.ibm.ws.threading.internal.SchedulingHelper@54f8062f
+      RunnableScheduledFuture[3] = class com.ibm.ws.threading.internal.SchedulingHelper@49e9bcb1
+      RunnableScheduledFuture[4] = class com.ibm.ws.threading.internal.SchedulingHelper@2a28f4e9
+      RunnableScheduledFuture[5] = class com.ibm.ws.threading.internal.SchedulingHelper@47783739
+      RunnableScheduledFuture[6] = class com.ibm.ws.threading.internal.SchedulingHelper@53259887
+      RunnableScheduledFuture[7] = class com.ibm.ws.threading.internal.SchedulingHelper@572daa66
+      RunnableScheduledFuture[8] = class com.ibm.ws.threading.internal.SchedulingHelper@3a4f93d6
+      RunnableScheduledFuture[9] = class com.ibm.ws.threading.internal.SchedulingHelper@3c88ba59
+      RunnableScheduledFuture[10] = class com.ibm.ws.threading.internal.SchedulingHelper@4316ecef
+      RunnableScheduledFuture[11] = class com.ibm.ws.threading.internal.SchedulingHelper@79521071
+      RunnableScheduledFuture[12] = class com.ibm.ws.threading.internal.SchedulingHelper@3f45fdae
+      RunnableScheduledFuture[13] = class com.ibm.ws.threading.internal.SchedulingHelper@997e5a6
+      RunnableScheduledFuture[14] = null
+      RunnableScheduledFuture[15] = null
+    lock = class java.util.concurrent.locks.ReentrantLock@7c87b25
+      serialVersionUID = 7373984872572414699
+      sync = class java.util.concurrent.locks.ReentrantLock$NonfairSync@5b5b707f
+    size = 14
+    leader = class java.lang.Thread@5f0f5eae
+      name = "Scheduled Executor-thread-1"
+      priority = 5
+      daemon = true
+      stillborn = false
+      eetop = 140697418471424
+      target = class java.util.concurrent.ThreadPoolExecutor$Worker@26b4b6b8
+      group = class java.lang.ThreadGroup@397da73e
+      contextClassLoader = class org.eclipse.osgi.internal.framework.ContextFinder@4d6f623d
+      inheritedAccessControlContext = class java.security.AccessControlContext@1ed7b831
+      threadInitNumber = 25
+      threadLocals = class java.lang.ThreadLocal$ThreadLocalMap@6de89b06
+      inheritableThreadLocals = null
+      stackSize = 0
+      nativeParkEventPointer = 140697412396512
+      tid = 26
+      threadSeqNumber = 133
+      threadStatus = 673
+      parkBlocker = class java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3a5d02f7
+      blocker = null
+      blockerLock = class java.lang.Object@4034c836
+      MIN_PRIORITY = 1
+      NORM_PRIORITY = 5
+      MAX_PRIORITY = 10
+      EMPTY_STACK_TRACE = class java.lang.StackTraceElement[0]
+      uncaughtExceptionHandler = null
+      defaultUncaughtExceptionHandler = null
+      threadLocalRandomSeed = 0
+      threadLocalRandomProbe = 0
+      threadLocalRandomSecondarySeed = 0
+    available = class java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@3a5d02f7
+      serialVersionUID = 1173984872572414699
+      firstWaiter = class java.util.concurrent.locks.AbstractQueuedSynchronizer$Node@32e32fca
+      lastWaiter = class java.util.concurrent.locks.AbstractQueuedSynchronizer$Node@32e32fca
+      REINTERRUPT = 1
+      THROW_IE = -1
+      this$0 = class java.util.concurrent.locks.ReentrantLock$NonfairSync@5b5b707f
+    MAX_ARRAY_SIZE = 2147483639
+  mainLock = class java.util.concurrent.locks.ReentrantLock@44403b75
+    serialVersionUID = 7373984872572414699
+    sync = class java.util.concurrent.locks.ReentrantLock$NonfairSync@7a3506fe
+      serialVersionUID = 7316153563782823691
+      serialVersionUID = -5179523762034025860
+      serialVersionUID = 7373984972572414691
+      head = null
+      tail = null
+      state = 0
+      SPIN_FOR_TIMEOUT_THRESHOLD = 1000
+      STATE = class java.lang.invoke.VarHandleInts$FieldInstanceReadWrite@3f2cf591
+      HEAD = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@77e782bc
+      TAIL = class java.lang.invoke.VarHandleObjects$FieldInstanceReadWrite@2d922846
+      serialVersionUID = 3737899427754241961
+      exclusiveOwnerThread = null
+  workers = class java.util.HashSet@c7ce561
+    serialVersionUID = -5024744406713321676
+    map = class java.util.HashMap@678f20c5
+      serialVersionUID = 362498820763181265
+      DEFAULT_INITIAL_CAPACITY = 16
+      MAXIMUM_CAPACITY = 1073741824
+      DEFAULT_LOAD_FACTOR = 0.75
+      TREEIFY_THRESHOLD = 8
+      UNTREEIFY_THRESHOLD = 6
+      MIN_TREEIFY_CAPACITY = 64
+      table = class java.util.HashMap$Node[16]
+      entrySet = null
+      size = 1
+      modCount = 1
+      threshold = 12
+      loadFactor = 0.75
+      keySet = null
+      values = null
+    PRESENT = class java.lang.Object@12828338
+    MAX_ARRAY_SIZE = 2147483639
+  termination = class java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4f19e83f
+    serialVersionUID = 1173984872572414699
+    firstWaiter = null
+    lastWaiter = null
+    REINTERRUPT = 1
+    THROW_IE = -1
+    this$0 = class java.util.concurrent.locks.ReentrantLock$NonfairSync@7a3506fe
+  largestPoolSize = 1
+  completedTaskCount = 0
+  threadFactory = class com.ibm.ws.threading.internal.ThreadFactoryImpl@420a22f5
+    tc = class com.ibm.websphere.ras.TraceComponent@26342d42
+      strings[0] = "TraceComponent[com.ibm.ws.threading.internal.ThreadFactoryImpl,class com.ibm.ws.threading.internal.ThreadFactoryImpl,[Threading],com.ibm.ws.threading.internal.resources.ThreadingMessages,null]"
+    TRACE_ENABLED_AT_STARTUP = false
+    createdThreadCount = class java.util.concurrent.atomic.AtomicInteger@56942296
+      serialVersionUID = 6214790243416807050
+      U = class jdk.internal.misc.Unsafe@52206daa
+      VALUE = 12
+      value = 1
+      serialVersionUID = -8742448824652078965
+    executorName = "Scheduled Executor"
+    threadGroup = class java.lang.ThreadGroup@397da73e
+      parent = class java.lang.ThreadGroup@55be2b1a
+      name = "Scheduled Executor Thread Group"
+      maxPriority = 10
+      destroyed = false
+      daemon = false
+      nUnstartedThreads = 0
+      nthreads = 1
+      threads = class java.lang.Thread[4]
+      ngroups = 0
+      groups = null
+    contextClassLoader = class org.eclipse.osgi.internal.framework.ContextFinder@4d6f623d
+      cycleDetector = class java.lang.ThreadLocal@3b66989c
+      finderClassLoader = class com.ibm.ws.kernel.internal.classloader.BootstrapChildFirstJarClassloader@5a8806ef
+      contextFinder = class org.eclipse.osgi.internal.framework.ContextFinder$Finder@10507d45
+      THIS = class java.lang.Class@69e308c6
+      parentContextClassLoader = class jdk.internal.loader.ClassLoaders$AppClassLoader@512ddf17
+      parent = class jdk.internal.loader.ClassLoaders$AppClassLoader@512ddf17
+      name = null
+      unnamedModule = class java.lang.Module@429e2c80
+      nameAndId = "org.eclipse.osgi.internal.framework.ContextFinder @4d6f623d"
+      parallelLockMap = null
+      package2certs = class java.util.Hashtable@10883fb8
+      nocerts = class java.security.cert.Certificate[0]
+      classes = class java.util.Vector@41cb4968
+      defaultDomain = class java.security.ProtectionDomain@4e669bb5
+      packages = class java.util.concurrent.ConcurrentHashMap@5dcf7d69
+      scl = class jdk.internal.loader.ClassLoaders$AppClassLoader@512ddf17
+      usr_paths = class java.lang.String[6]
+      sys_paths = class java.lang.String[1]
+      loadedLibraryNames = class java.util.HashSet@420791cd
+      systemNativeLibraries = class java.util.concurrent.ConcurrentHashMap@46ba5ca9
+      nativeLibraries = null
+      assertionLock = class org.eclipse.osgi.internal.framework.ContextFinder@4d6f623d
+      defaultAssertionStatus = false
+      packageAssertionStatus = null
+      classAssertionStatus = null
+      classLoaderValueMap = class java.util.concurrent.ConcurrentHashMap@c6bfc97
+      $assertionsDisabled = true
+    serialVersionUID = -3600085245630848128
+  handler = class java.util.concurrent.ThreadPoolExecutor$AbortPolicy@29368038
+  keepAliveTime = 10000000
+  allowCoreThreadTimeOut = false
+  corePoolSize = 1
+  maximumPoolSize = 2147483647
+  defaultHandler = class java.util.concurrent.ThreadPoolExecutor$AbortPolicy@29368038
+  shutdownPerm = class java.lang.RuntimePermission@296edd31
+    serialVersionUID = 7399184964622342223
+    serialVersionUID = 6279438298436773498
+    wildcard = false
+    path = "modifyThread"
+    exitVM = false
+    serialVersionUID = -5636570222231596674
+    name = "modifyThread"
+  ONLY_ONE = true
+  $assertionsDisabled = true
+
