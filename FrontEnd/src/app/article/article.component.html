@@ -1,0 +1,47 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit Product: {{editArticle.product}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form name="editArticleForm" #myForm="ngForm">
+          <div class='row'>
+              <div class='col-sm-3'>
+                      <label for="inputAmount">Amount</label>
+              </div>
+              <div class='col-sm-9'>
+                      <input class="form-control" id="inputAmount" name="inputAmount" required="true" type="number" [(ngModel)]="editArticle.amount" placeholder="Amount" ng-required="true"/>
+              </div>
+          </div>
+          <div class='row'>
+              <div class='col-sm-3'>
+                  <label for="inputUnitPrice">Unit Price</label>
+              </div>
+              <div class='col-sm-9'>
+                    <input class="form-control" id="inputUnitPrice" name="inputUnitPrice" required="true" type="number" [(ngModel)]="editArticle.unitPrice" placeholder="Unit Price" ng-required="true"/>
+              </div>
+          </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save')">Save</button>
+    </div>
+  </ng-template>
+
+<td class="product align-middle col-md-3">{{article.product}}</td>
+  <td class="number align-middle text-right col-md-2" >{{article.amount | number : "1.1-1"}}</td>
+  <td class="number align-middle text-right col-md-2">{{article.unitPrice | number : "1.1-1"}}</td>
+  <td class="number align-middle text-right col-md-3">{{article.total | number : "1.1-1"}}</td>
+  <td class="button align-middle col-md-1">
+      <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" (click)="onEdit(content)">
+          <span class="far fa-edit"></span>
+      </button>
+  </td>
+  <td class="align-middle col-md-1">
+     <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" (click)="onDelete()">
+        <span class="fas fa-trash"></span>
+      </button>
+  </td>
+  {{closeResult}}
