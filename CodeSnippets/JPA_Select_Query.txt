@@ -1,0 +1,6 @@
+CriteriaBuilder cb = em.getCriteriaBuilder(); 
+CriteriaQuery<Article> cq = cb.createQuery(Article.class); 
+Root<Article> rootEntry = cq.from(Article.class); 
+CriteriaQuery<Article> all = cq.select(rootEntry); 
+TypedQuery<Article> allQuery = em.createQuery(all);
+return allQuery.getResultList();
